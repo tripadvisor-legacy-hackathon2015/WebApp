@@ -80,6 +80,84 @@ router.get('/search', function(req, res, next) {
 	});
 });
 
+
+function start_conception_expansion(req,res,next){
+	var searchText = req.query.searchText;
+	var latitude = req.query.lat;
+	var longitude = req.query.lon;
+	var maxDistance = "2km"; //TODO: Less hardcoded
+
+
+  // call concept expansion service
+  // TODO: ensure only one word or something...
+  var concept_expansion_url = "http://es-hack-1.dai.gl:8000/word2vec?q="+searchText; 
+  var concept_expansion_array;
+  $.getJSON(concept_expansion_url, function(data){
+    concept_expansion_array=data
+  });
+
+}
+
+function get_concept_expansion_elastic_search(req, res, next){
+	//Get searchText, get geolocation
+	var searchText = req.query.searchText;
+	var latitude = req.query.lat;
+	var longitude = req.query.lon;
+	var maxDistance = "2km"; //TODO: Less hardcoded
+	var responseObjects;
+	console.log("Servicing Reqest: Text = "+searchText+" Lat = "+latitude+" Lon = "+longitude);
+
+	var query = {
+		"query" : {
+			"filtered": {
+				"query": {
+					"multi_match": {
+						"query": searchText,
+						"type": "most_fields", 
+						"fields": ["name^3", "reviews"]
+					}
+				},
+				"filter": {
+					"geo_distance": {
+						"distance": maxDistance,
+						"coordinates": {
+							"lat": latitude,
+							"lon": longitude
+						}
+					}
+
+				}
+			}
+		},
+		"highlight": {
+			"fields": {
+				"reviews": {},
+				"name": {}
+			}
+		}
+	};
+
+	var query_request_options = {
+		uri: 'http://159.203.23.61:9200/locationidx/location/_search',
+		method: 'POST',
+		json: true,
+		body: query
+	};
+
+	request(query_request_options, function(error, response, body){
+		if (error != null) {
+			console.log(error);
+			res.writeHead(500, {'Content-Type': 'text/plain'});
+			res.end("Server Error: "+error);
+		} else {
+			//console.log('Body: '+JSON.stringify(body));
+			var responseObjects = body.hits.hits;
+			res.writeHead(200, {'Content-Type': 'application/json'});
+			res.end(JSON.stringify(parse(responseObjects)));
+		}
+	});
+}
+
 function parse(data) {
 	//Add prioritization for rating
 	var response = {
