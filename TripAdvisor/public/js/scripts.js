@@ -6,7 +6,7 @@ function getGeoLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(setLocation);
     } else {
-        alert("fuck you");
+        alert("fuck you - ♥ Daniel");
     }
 }
 
@@ -47,3 +47,5 @@ function placeMarker(geoLocation, label) {
 	});
 	marker.setMap(map);
 }
+
+

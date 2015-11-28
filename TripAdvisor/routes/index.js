@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
       after_search: 'partials/after-search',
       mapView:  'partials/map-view',
       footer:   'partials/footer',
+      result_item: 'partials/result-item',
       scripts:  'partials/scripts'
     }
   });
