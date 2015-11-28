@@ -121,12 +121,13 @@ function get_concept_expansion_elastic_search(req, res, next,concept_expansion_a
 	var maxDistance = "10km"; //TODO: Less hardcoded
 	var responseObjects;
 	console.log("Servicing Reqest: Text = "+searchText+" Lat = "+latitude+" Lon = "+longitude);
-  concept_expansion_array=array.slice();
 
-  array.forEach(function(word){
+  var newarr =concept_expansion_array.slice();
+  concept_expansion_array.forEach(function(word){
     if(word.indexOf(searchText)>-1)
-     concept_expansion_array.splice(concept_expansion_array.indexOf(word),1);
+     newarr.splice(newarr.indexOf(word),1);
   })
+  concept_expansion_array=newarr;
 
 	var query = {
 		"query" : {
