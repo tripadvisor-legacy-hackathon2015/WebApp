@@ -44,6 +44,17 @@
                 </div>
             </div>
         </div>
+        <div class="container" id="search_results">
+            <div class="container" id="sort_bar">
+
+            </div>
+            <div class="container" id="results_list">
+
+            </div>
+            <div id="map">
+
+            </div>
+        </div>
     </div>
 
 
