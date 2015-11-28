@@ -9,7 +9,7 @@
     <![endif]-->
     {{> head }}
     
-    <body onload="getGeoLocation()" ng-app="angularApp">
+    <body ng-app="angularApp">
 
         <!-- {{> main_search }} -->
 

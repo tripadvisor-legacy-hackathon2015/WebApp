@@ -101,7 +101,7 @@
     margin:50px 0 0 -150px;
 }
 .search-logo{
-    margin-top: 3px;
+    margin-top: 2px;
     float:left;
 }
 .title-padding{
@@ -113,4 +113,62 @@
     height: 100%;
     min-width:200px;
     width: 100%;
+}
+.img_holder{
+    background-color: #b3cccc;
+    height: 90px;
+    width: 90px;
+}
+
+
+#result-item.results_list{
+    margin-top: 10px;
+    padding: 0px;
+    outline: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+
+}
+.result_listing{
+    overflow:scroll;
+}
+.name_holder{
+    background-color: #f29bac;
+    height:26px;
+    margin-left: 5px;
+
+}
+.address_holder{
+    background-color: #f243b2;
+    height:26px;
+    width: 40%;
+
+    margin-left: 5px;
+}
+.rating_holder{
+    background-color: #f2824c;
+    height:26px;
+    width: 40%;
+    margin-left: 5px;
+}
+
+.distance_holder{
+    background-color: #f2d424;
+    height:90px;
+    line-height: 90px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+
+}
+.info_holder,
+.quote_holder{
+    flex-grow: 1;
+}
+
+.quote_holder{
+    width:50px;
+    height: 50px;
+    vertical-align: middle;
 }

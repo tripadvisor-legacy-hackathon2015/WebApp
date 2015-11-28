@@ -1,6 +1,8 @@
 var latitude;
 var longitude;
 var map;
+var map_loaded;
+var markerArray;
 
 var angularApp = angular.module('angularApp', [], function ($interpolateProvider) {
     $interpolateProvider.startSymbol('<%');
@@ -31,14 +33,24 @@ $(document).ready(function () {
 
     $(document).on("searchResponse", populateMap);
     $(document).on("searchResponse", populateList);
+	  getGeoLocation();
+    markerArray = new Array();
 });
 
 function getGeoLocation(){
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(setLocation);
+        navigator.geolocation.getCurrentPosition(setLocation,getLocationFromIP);
     } else {
-        alert("fuck you - ♥ Daniel");
+        getLocationFromIP();
     }
+}
+
+function getLocationFromIP(){
+    $.getJSON("http://freegeoip.net/json/", function (data) {
+        longitude = data.longitude;
+        latitude = data.latitude;
+        console.log("longitude: " + longitude + " latitude: " + latitude);
+    });
 }
 
 function setLocation(position) {
@@ -61,9 +73,30 @@ function search() {
     });
 }
 
+function clearMap() {
+	for (var i=0; i<markerArray.length; i++) {
+		markerArray[i].setMap(null);
+	}
+	markerArray = new Array();
+}
+
 function populateMap(event, data) {
-    console.log(event);
-    console.log(data);
+	//console.log(event);
+	//console.log(data);
+	clearMap();
+	var latlngbounds = new google.maps.LatLngBounds();
+	if (latitude == null || longitude == null) {console.log("position not set");}
+	var myLocation = new google.maps.LatLng(latitude,longitude);
+	latlngbounds.extend(myLocation);
+	for (var i = 0; i<data.size; i++) {
+		var location = new google.maps.LatLng(
+			parseFloat(data.result[i].coordinates.lat),
+			parseFloat(data.result[i].coordinates.lon));
+		latlngbounds.extend(location);
+		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name);
+		markerArray.push(tempMarker);
+	}
+	map.fitBounds(latlngbounds);
 }
 
 function populateList(event, data) {
@@ -71,20 +104,25 @@ function populateList(event, data) {
 }
 
 function initMap() {
-    var myLatLng = {lat: 45.3875812, lng: -75.6982142};
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: myLatLng,
-        zoom: 8
-    });
-    placeMarker(myLatLng,"You are here!");
+	var myLatLng = new google.maps.LatLng(45.3875812,-75.6960202);
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: myLatLng,
+		zoom: 11
+	});
+	placeMarker(myLatLng, "You Are Here");
 }
 
 function placeMarker(geoLocation, label) {
-    var marker = new google.maps.Marker({
-        position: geoLocation,
-        title: label
-    });
-    marker.setMap(map);
+	var location = {
+		lat: parseFloat(geoLocation.lat),
+		lng: parseFloat(geoLocation.lon)
+	}
+	var marker = new google.maps.Marker({
+		position: location,
+		title: label
+	});
+	marker.setMap(map);
+	return marker;
 }
 
 

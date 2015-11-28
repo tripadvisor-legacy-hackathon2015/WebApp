@@ -88,6 +88,19 @@ function parse(data) {
 	response.size = data.length;
 	//console.log('Num Objects Returned: '+data.length);
 	for (var i = 0; i<data.length; i++) {
+        var result_obj = data[i]._source;
+        
+        // Do we have any highlights? Copy them to response.
+        var result_highlights = [];
+        if (data[i].highlight) {
+            var highlights = data[i].highlight;
+            if (highlights.reviews) {
+                result_highlights = result_highlights.concat(highlights.reviews);
+            }
+            // strip all the embedded newlines
+            result_highlights = result_highlights.map(function(s){return s.replace(/\n/g, " ")});
+        }
+        result_obj['highlights'] = result_highlights;
 		response.result.push(data[i]._source);
 	}
 	return response;
