@@ -1,6 +1,24 @@
 var latitude;
 var longitude;
 var map;
+var map_loaded;
+var markerArray;
+
+var angularApp = angular.module('angularApp', [], function ($interpolateProvider) {
+    $interpolateProvider.startSymbol('<%');
+    $interpolateProvider.endSymbol('%>');
+});
+
+angularApp.controller('MainController', ['$scope', function($scope) {
+    angular.element(document).ready(function () {
+        $(document).on('searchResponse', populateResults);
+    });
+
+    function populateResults (event, data) {
+        $scope.restaurants = data.result;
+        $scope.$apply();
+    }
+}]);
 
 $(document).ready(function () {
     $("#search_box").keyup(function (e) {
@@ -8,8 +26,15 @@ $(document).ready(function () {
             search();
         }
     });
+
+    // var injector = angular.injector(['ng', 'angularApp']);
+    // var $controller = injector.get('$controller');
+    // var AngularCtrl = $controller('MainController');
+
     $(document).on("searchResponse", populateMap);
     $(document).on("searchResponse", populateList);
+	  getGeoLocation();
+    markerArray = new Array();
 });
 
 function getGeoLocation(){
@@ -48,32 +73,58 @@ function search() {
     });
 }
 
+function clearMap() {
+	for (var i=0; i<markerArray.length; i++) {
+		markerArray[i].setMap(null);
+	}
+	markerArray = new Array();
+}
+
 function populateMap(event, data) {
-	console.log(event);
-	console.log(data);
+	//console.log(event);
+	//console.log(data);
+	clearMap();
+	var latlngbounds = new google.maps.LatLngBounds();
+	if (latitude == null || longitude == null) {console.log("position not set");}
+	var myLocation = new google.maps.LatLng(latitude,longitude);
+	latlngbounds.extend(myLocation);
+	for (var i = 0; i<data.size; i++) {
+		var location = new google.maps.LatLng(
+			parseFloat(data.result[i].coordinates.lat),
+			parseFloat(data.result[i].coordinates.lon));
+		latlngbounds.extend(location);
+		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name);
+		markerArray.push(tempMarker);
+	}
+	map.fitBounds(latlngbounds);
 }
 
 function populateList(event, data) {
-	//data:
-	//size: number of items
-	//result: array of items
+    
 }
 
 function initMap() {
-	var myLatLng = {lat: 45.3875812, lng: -75.6982142};
+	var myLatLng = new google.maps.LatLng(45.3875812,-75.6960202);
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: myLatLng,
-		zoom: 8
+		zoom: 11
 	});
-	placeMarker(myLatLng,"You are here!");
+	placeMarker(myLatLng, "You Are Here");
 }
 
 function placeMarker(geoLocation, label) {
+	var location = {
+		lat: parseFloat(geoLocation.lat),
+		lng: parseFloat(geoLocation.lon)
+	}
 	var marker = new google.maps.Marker({
-		position: geoLocation,
+		position: location,
 		title: label
 	});
 	marker.setMap(map);
+	return marker;
 }
+
+
 
 
