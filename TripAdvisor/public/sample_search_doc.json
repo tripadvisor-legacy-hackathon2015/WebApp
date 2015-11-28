@@ -1,8 +1,6 @@
 {
-   "hits": {
-      "total": 406,
-      "max_score": 0.23125473,
-      "hits": [
+      "size": 406,
+      "results": [
          {
             "_index": "locationidx",
             "_type": "location",
@@ -376,4 +374,3 @@
          }
       ]
    }
-}
