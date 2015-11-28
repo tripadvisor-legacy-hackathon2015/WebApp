@@ -31,8 +31,8 @@ router.get('/search', function(req, res, next) {
 	console.log("Servicing Reqest: Text = "+searchText+" Lat = "+latitude+" Lon = "+longitude);
 
 	client.search({ //TODO prioritize by rating, add index and type, do something with trip_types and price_level
-		index: 'INDEX',
-  		type: 'TYPE',
+		index: 'locationidx',
+		type: 'location',
 		body: {
 			filtered : {
 				multi_match : {
@@ -64,7 +64,8 @@ router.get('/search', function(req, res, next) {
 });
 
 function parse(data) {
-	return { message: "In Development" };
+	//Add prioritization for rating
+	return data;
 }
 
 module.exports = router;
