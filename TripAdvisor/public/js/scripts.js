@@ -16,4 +16,13 @@ function setLocation(position) {
 
 function search() {
     var searchText = document.getElementById("search_box").value;
+    var serverAddress;
+
+    alert();
+
+    /*$.getJSON(serverAddress, { search: searchText, latitude: latitude, longitude: longitude })
+        .done(function (data) {
+            
+        });*/
 }
+
