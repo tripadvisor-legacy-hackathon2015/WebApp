@@ -5,7 +5,7 @@
 
     <div class="search-bar-pushed" id="custom-search-input-after">
         <div class="input-group">
-            <input id="search_box" type="text" class="form-control input-lg" onSubmit="search();" placeholder="Search.." />
+            <input id="search_box" type="text" class="form-control input-lg" onSubmit="search();" placeholder="What are you hungry for?" />
             <span class="input-group-btn">
                 <button class="btn btn-info" onclick="search()" type="button">
                     <i class="glyphicon glyphicon-search"></i>
