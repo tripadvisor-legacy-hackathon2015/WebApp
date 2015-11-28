@@ -1,7 +1,6 @@
 var latitude;
 var longitude;
 var map;
-var markerArray;
 
 $(document).ready(function () {
     $("#search_box").keyup(function (e) {
@@ -11,15 +10,22 @@ $(document).ready(function () {
     });
     $(document).on("searchResponse", populateMap);
     $(document).on("searchResponse", populateList);
-    markerArray = new Array();
 });
 
 function getGeoLocation(){
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(setLocation);
+        navigator.geolocation.getCurrentPosition(setLocation,getLocationFromIP);
     } else {
-        alert("fuck you - ♥ Daniel");
+        getLocationFromIP();
     }
+}
+
+function getLocationFromIP(){
+    $.getJSON("http://freegeoip.net/json/", function (data) {
+        longitude = data.longitude;
+        latitude = data.latitude;
+        console.log("longitude: " + longitude + " latitude: " + latitude);
+    });
 }
 
 function setLocation(position) {
@@ -42,21 +48,9 @@ function search() {
     });
 }
 
-function clearMap() {
-	for (var i=0; i<markerArray.length; i++) {
-		markerArray[i].setMap(null);
-	}
-	markerArray = new Array();
-}
-
 function populateMap(event, data) {
 	console.log(event);
 	console.log(data);
-	clearMap();
-	for (var i = 0; i<data.size; i++) {
-		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name);
-		markerArray.push(tempMarker);
-	}
 }
 
 function populateList(event, data) {
@@ -71,20 +65,15 @@ function initMap() {
 		center: myLatLng,
 		zoom: 8
 	});
-	//placeMarker(myLatLng,"You are here!");
+	placeMarker(myLatLng,"You are here!");
 }
 
 function placeMarker(geoLocation, label) {
-	var location = {
-		lat: parseFloat(geoLocation.lat),
-		lng: parseFloat(geoLocation.lon)
-	}
 	var marker = new google.maps.Marker({
-		position: location,
+		position: geoLocation,
 		title: label
 	});
 	marker.setMap(map);
-	return marker;
 }
 
 
