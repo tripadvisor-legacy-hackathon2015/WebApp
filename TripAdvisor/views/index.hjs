@@ -26,7 +26,7 @@
                             <li><% restaurant.name %></li>
                         </ul>
                     </div>
-                    <div id="conceptexpansion_list" ng-repeat="restaurant in conceptexpansion_restaurants">
+                    <div id="conceptexpansion_list" ng-repeat="restaurant in conceptexpansionrestaurants">
                       <ul>
                         <li><% restaurant.name %></li>
                       </ul>
