@@ -90,7 +90,7 @@ function populateMap(event, data) {
 			parseFloat(data.result[i].coordinates.lat),
 			parseFloat(data.result[i].coordinates.lon));
 		latlngbounds.extend(location);
-		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name);
+		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name, data.result[i].address);
 		markerArray.push(tempMarker);
 	}
 	map.fitBounds(latlngbounds);
@@ -109,7 +109,7 @@ function initMap() {
 	placeMarker(myLatLng, "You Are Here");
 }
 
-function placeMarker(geoLocation, label) {
+function placeMarker(geoLocation, label, address) {
 	var location = {
 		lat: parseFloat(geoLocation.lat),
 		lng: parseFloat(geoLocation.lon)
@@ -118,6 +118,21 @@ function placeMarker(geoLocation, label) {
 		position: location,
 		title: label
 	});
+
+    // Show restaurant name and adddress on hover
+    var contentString = '<div><h2>'+ label + '</h2></div>' +
+        '<div><p>' + address + '</p></div>';
+    var infoWindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+    marker.addListener('mouseover', function () {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        infoWindow.open(map, marker)
+    });
+    marker.addListener('mouseout', function () {
+        marker.setAnimation(null);
+        infoWindow.close();
+    })
 
 	marker.setMap(map);
 	return marker;
