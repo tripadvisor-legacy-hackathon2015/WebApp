@@ -90,6 +90,7 @@ function start_conception_expansion(req,res,next){
 	var maxDistance = "2km"; //TODO: Less hardcoded
 
   console.log("start_conception_expansion reached")
+<<<<<<< HEAD
 
   // call concept expansion service
   // TODO: ensure only one word or something...
