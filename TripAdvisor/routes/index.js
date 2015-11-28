@@ -98,7 +98,7 @@ function start_conception_expansion(req,res,next){
 
 }
 
-function get_concept_expansion_elastic_search(req, res, next){
+function get_concept_expansion_elastic_search(req, res, next,concept_expansion_array){
 	//Get searchText, get geolocation
 	var searchText = req.query.searchText;
 	var latitude = req.query.lat;
