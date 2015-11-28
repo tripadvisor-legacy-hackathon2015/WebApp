@@ -1,24 +1,22 @@
 <div class="container vertical-center" id="main_search">
         <div class="row">
-            <div class="col-md-6 search-bar">
+            <div class="search-bar">
               <div class="title-padding">
                 <h2>
                   <img src="/img/tripadvisor.png" alt="Trip Advisor" height="44" width="44">
-                  Tripadvisor
+                  TripAdvisor
                 </h2>
                 </div>
-                <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                        <form class="form-inline" role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control input-lg" placeholder="Search.." id="search_box" onsubmit="search()" />
-                            </div>
-                            <button class="btn btn-info btn-lg" type="submit" onclick="search()">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </form>
-                    </div>
+                <div class="search-bar" id="custom-search-input-after">
+                <div class="input-group">
+                    <input id="search_box" type="text" class="form-control input-lg" onSubmit="search();" placeholder="Search.." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" onclick="search()" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
                 </div>
+              </div>
             </div>
         </div>
 </div>

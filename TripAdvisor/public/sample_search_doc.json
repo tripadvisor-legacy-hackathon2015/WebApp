@@ -1,0 +1,376 @@
+{
+      "size": 406,
+      "results": [
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzeN3tk0mKy8N6RxM",
+            "_score": 0.23125473,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.41006",
+                  "lon": "-75.69868"
+               },
+               "rating": 3.5,
+               "placetype": "restaurant",
+               "address": "523 Gladstone Ave, Ottawa, Ontario K1R 5N9 Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d4359660-Reviews-m11068-Gladstone_Golden_Grill-Ottawa_Ontario.html",
+               "price_level": null,
+               "reviews": [
+                  "Good flavor, small portion I drive by this place often when I am working so I decided to stop and give it a try. I had the quarter chicken special which includes one side and a beverage for $9.99. Flavor of the chicken and plantains were good, my only complaint is that the portion of chicken was very small. I wouldn't go back because of that, you don't have much for your money ",
+                  "GREAT BBQ Very small eclectic restaurant at 523 Gladstone. Easy to get to by the #14 Bus if you are at Rideau Ctr. I had the chicken and my wife had the goat dinner which I got to sample - the best we have tasted. There were superbly fried plantains seasoned to perfection with a large portion of rice. Plenty to eat. The owner, Marthe, was the Chef and basically did just about everything. She is a very delightful woman. We would go back.",
+                  "Ivory Coast-Carribean Eclectic Chicken! Marthe Mpendu cooks chicken in the Ivory Coast tradition over a charcoal fire with out of this continent spices and marinades. I'm a sucker for the grilled plantains too. The desert bars were to die for in this local favorite."
+               ],
+               "name": "Gladstone Golden Grill",
+               "photo_url": "http://static.tacdn.com/cds/media/photo-l/04/0a/15/61/getlstd-property-photo.jpg",
+               "ta_id": 4359660
+            },
+            "highlight": {
+               "reviews": [
+                  " give it a try. I had the quarter <em>chicken</em> special which includes one side and a beverage for $9.99",
+                  ". Flavor of the <em>chicken</em> and plantains were good, my only complaint is that the portion of <em>chicken</em> was",
+                  " at Rideau Ctr. I had the <em>chicken</em> and my wife had the goat dinner which I got to sample - the best",
+                  " we have tasted. There were superbly <em>fried</em> plantains seasoned to perfection with a large portion of",
+                  "Ivory Coast-Carribean Eclectic <em>Chicken</em>! Marthe Mpendu cooks <em>chicken</em> in the Ivory Coast tradition"
+               ]
+            }
+         },
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzdKQtk0mKy8N6RvB",
+            "_score": 0.21117961,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.362206",
+                  "lon": "-75.73806"
+               },
+               "rating": 3.5,
+               "placetype": "restaurant",
+               "address": "1385 Baseline Rd, Unit 4, Ottawa, Ontario K2C 3G1 Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d3485365-Reviews-m11068-Zaki_Broast-Ottawa_Ontario.html",
+               "price_level": null,
+               "reviews": [
+                  "Family friendly Halal food/restaurant If you love kababs and friend chicken, this is your place to go in West-Ottawa! The best part is that it is Halal. I love their shami kabab plates that come with rice and a sale. I usually go here with my husband and we often share a plate since the servings are generous. The service could be quicker but we understand that it can get quite busy especially now weekends and in the evenings.",
+                  "Good halal option in ottawa Love KFC, but can't have it bc its not halal?..then go to Zaki.  I'm a picky eater so I should know..good Broast chicken (sometimes overcooked), but better burgers...and Philly steak sandwich is prob the best. They have Tuesday and Wednesday specials ands well...overall good. The owners re very nice, but the staff is sometimes indifferent. ",
+                  "Not bad...average food for price I ordered take out of one tandoori skewer ($8) and a side order of basmati rice. ($3) Flavour of chicken was good with nice seasoning, but I felt a bit ridiculous opening my takeout box to reveal 7 little cubes of chicken. It was good, but I wouldn't order it again. The service was a bit funny. Cashier seemed flustered and short with customers, I guess because she was training a new staff and dealing with the lunch 'rush'. It made me uncomfortable, although she warmed up in end. She even offered a complimentary garlic sauce which was really tasty. After reading reviews and seeing the steak on the grill, I may return to try the steak sandwich. With garlic sauce too!",
+                  "Steak sandwich is delish The steak sandwich is where its at. The chicken was a little small but still much better than KFC . Service was a little slow but extremely friendly. The steak sandwich portion is enormous.",
+                  "Best halal philly steak sandwich The steak sandwich with fries and garlic fries hits the spot for me. And the best part is that it's halal. It's reasonably priced food in a fast food environment. The delivery service is lame. I've had two experiences and neither great....both times driver delivered food an hour and a half later! I would also order broast chicken. Avoid the shawarma platters as they are mediocre. The burgers are nothing to rave about.",
+                  "It's a sad time for fried chicken in Ottawa. I have been to Zaki's a few times. I won't go back. No service, dirty tables, lousy chicken, brutal \"sauces\", bland rices and terrible fries. How do places like this survive? What have our standards become? My most recent visit was a home delivery. I ordered 12 pieces of fried chicken. That's what they specialize in so that's what I ordered. Just the chicken. What arrived was 12 pieces of crap. Over cooked, leathery, dry and the smallest excuse for a chicken I've seen since Swiss Chalet. The selection of pieces? 4 wings, 2 legs, 3 thighs and what were 3 small chopped up pieces of breast? The whole order was a joke. It was SO bad that I got in my car and drove the order back to them for a refund. They gave me my money back after an inspection by a manager who agreed that it was over cooked. I drove the order back to them and all they did is give me my money back? I actually didn't expect or want any compensation or incentive to go back but none offered? \nNo decor. None. A haphazard spread of serve yourself plastic tables that wobble. \nHalal does NOT mean quality. It is just a way of killing the animals according to muslim faith. You can buy poor quality Halal meats. Go to Zaki's and you will experience this.",
+                  "Steak Sandwich The Steak Sandwich is by far my (only) favorite ! Tastes great and good price especially when you combo it with fries and a drink. Didn't like the chicken or the rice/tikka/shami. Always stick to the steak sandwich !",
+                  "Loved The Chicken It was easy to choose Zaki Broast during our recent Ottawa visit after reading the online reviews. This truly is a great place for casual dining if you're looking for halal food. Clean and comfortable seating, really good quality food, fast and courteous service. There is not much choice when it comes to finding halal places in Ottawa, mostly one ends up going to shawarma places, but now with the addition of Zaki Broast, we don't have to think much where to go.",
+                  "Great Food Halal Style Awesome food, love it, great people great service. Lots of choice on the menu,better than the typical Shawarma.",
+                  "Anorexic Chicken Pieces I have been going to this place since the week it opened. Our first visits were great even if they didn't have slaw. Over time we noticed the chicken pieces getting smaller. My last visit Sunday with a buddy was our last visit. The fries here are the worst Ottawa has to offer. These frozen low quality bagged fries were dry devoid of any flavour and un edible. The chicken itself is good but for the money way too small. The thigh I got in my four piece was tiny with barely any meat on the bone. Seems this is the norm in Ottawa to serve these anorexic birds that resemble quail parts instead of chicken. To top it off the bun/roll served with the meal was so stale when you broke into it you cold see different shades of white bread. Can't you say freezer burnt. Why is it so hard to find decent fried chicken in this city?",
+                  "Yummy! Tried out this place as an alternative to KFC and was very pleased with the food and service\n\nDelicious chicken-Not as greasy as KFC-Moist and tender\n\nTho the chicken itself may not have had the Colonels secret blend of 11 herbs and spices, the garlic dip provided more than made up for it\n\nDelicious! \n\n:)",
+                  "An Alternative Kind of Fried Chicken - We loved it! My family and I dropped by Zaki to pick up a family size broasted chicken meal, chicken wrap sandwich and a burger.   We waited for a long to time for our order to come - however the restaurant seemed very busy at the time.  We did not eat at the restaurant, we opted to bring our meal home and enjoy it in the comfort of our own kitchen table.  \n\nWe were all very pleased with our meals.  My daughters enjoyed their sandwiches and burgers.  Usually a good indication is that they actually eat the whole thing (which they did!) Our chicken was cooked to perfection, not dry, nice and tender.  It was not heavily saturated in grease so you didn't feel overwhelmed eating it.  The fries were wonderful too, they were marinated in a special seasoning that added flavour.  The garlic dip substitute for ketchup or bbq sauce was divine.  The food that we ordered between the four of us was plentiful but you also need to keep in mind that my husband and I devoured the family meal almost on our own.  I would suggest two family meals if that is all you are getting for a family of 4 - 6 people, especially if you have big appetites.  That being said I still found the meal to be reasonable especially considering the quality of broasted chicken, chicken sandwich and hamburger meat.  \n\nMy new favourite choice for \"fried\" chicken for sure!",
+                  "Broasted Chicken Not Tasty I have eaten Broasted Chicken during trips to Lancaster, PA and Holmes County, OH where I first tried it and is without doubt the tastiest and best I've ever had anywhere, hands down.\n\nA little while back I had read that Zaki's in Ottawa has broasted chicken so made it a point to give it a try.  Their restaurant inside is long and narrow with limited seating and you order at the counter then go back to get your order when it's ready.  One of the owners, who was friendly and  personable, works behind the order counter and you can see the cooks preparing the food in the kitchen area.\n\nWe ordered the 8 pc. broasted chicken which came close to $16.00 but unfortunately was not all that impressed with it compared to what I have had in the past.  I found the chicken pieces were small and didn't have the same taste as it does in the Amish areas.\n\nIt's doubtful I would return for the chicken but they have other items on their menu which might be a better choice."
+               ],
+               "name": "Zaki Broast",
+               "photo_url": "http://static.tacdn.com/cds/media/photo-l/08/d8/99/1f/2-piece-meal-with-fries.jpg",
+               "ta_id": 3485365
+            },
+            "highlight": {
+               "reviews": [
+                  "Family friendly Halal food/restaurant If you love kababs and friend <em>chicken</em>, this is your place to",
+                  " picky eater so I should know..good Broast <em>chicken</em> (sometimes overcooked), but better burgers...and",
+                  " basmati rice. ($3) Flavour of <em>chicken</em> was good with nice seasoning, but I felt a bit ridiculous",
+                  " opening my takeout box to reveal 7 little cubes of <em>chicken</em>. It was good, but I wouldn't order it again",
+                  "Steak sandwich is delish The steak sandwich is where its at. The <em>chicken</em> was a little small but"
+               ]
+            }
+         },
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzdeftk0mKy8N6Rvp",
+            "_score": 0.20487157,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.292667",
+                  "lon": "-75.72798"
+               },
+               "rating": 2,
+               "placetype": "restaurant",
+               "address": "2900 Woodroffe Ave, Ottawa, Ontario Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d3674971-Reviews-m11068-Express_Pho-Ottawa_Ontario.html",
+               "price_level": null,
+               "reviews": [
+                  "Not worth it Worst Vietnamese restaurant I've ever visited. Not even authentic Vietnamese since the owners are Chinese.\n\nBubble tea is okay. It's all syrups though but then again you probably won't find any bubble tea place nearby that uses fresh fruit so it's good enough. It's a bit inconsistent though. The guy who makes it is very slow and not much syrup. The girl is a bit better, she's faster and hers is more flavourful.\n\nThe pho is very very watered down and there is very little meat. Not worth the money.\n\nThe people are very nice, too bad the food is not good.",
+                  "Support Local This little pho place has only been open 6 months. I went in recently to order take out and found it to be very clean and the staff friendly. I was given a pot of tea while I waited for my order. The rice wraps were just ok. Loosely wrapped and too much lettuce. The peanut sauce was tasty however. I ordered the Basil Chicken and Shrimp fried rice and was pleasantly surprised. A very unique flavour that was a nice change from the usual fried rice.  I will definitely be back, next time to try the pho. I encourage folks who live in Barrhaven to drop by and check out Express Pho. It's always nice to support local businesses."
+               ],
+               "name": "Express Pho",
+               "photo_url": null,
+               "ta_id": 3674971
+            },
+            "highlight": {
+               "reviews": [
+                  " tasty however. I ordered the Basil <em>Chicken</em> and Shrimp <em>fried</em> rice and was pleasantly surprised. A very",
+                  " unique flavour that was a nice change from the usual <em>fried</em> rice.  I will definitely be back, next"
+               ]
+            }
+         },
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzeZZtk0mKy8N6Rxq",
+            "_score": 0.18441364,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.411774",
+                  "lon": "-75.705"
+               },
+               "rating": 4,
+               "placetype": "restaurant",
+               "address": "641 Somerset Street West, Ottawa, Ontario K1R 5K1 Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d4547404-Reviews-m11068-Ju_Xiang_Yuan-Ottawa_Ontario.html",
+               "price_level": null,
+               "reviews": [
+                  "Excellent  Northern, Sichuan and Hunan Chinese We have been eating here for years and the food is always really well prepared.  I have never tried the standard chinese fare on the menu (egg or spring rolls, General Tao's Chicken etc) and that is not what this place is about.\n\nThe BBQ's appetizers are really good - especially the chicken hearts and the Twice fried pork is really delicious.",
+                  "Awesome spicy Chinese food Loved the food here. We ordered the BBQ shrimps and chicken hearts for starters. The chicken hearts tasted great. For the mains we ordered Kung Po Guy Ding (mildly spiced chicken with bell peppers and peanuts), Spicy fish in hot pot and Salt & Pepper sea food (shrimps, scallops and squid). The spicy fish was really spicy and tasted great. Next in the list would be Kung Po Guy Ding, which complemented the spice of the soup (helped calm down the spices). Overall great experience. Moreover, it is reasonably priced and great portions.",
+                  "Slightly westernized The food at this restaurant is okay.  It can be pretty spicy, i.e hot as it is predominantly a Szechuan restaurant.  It is located in Ottawa's Chinatown which is not large.  Service is quick and portions are ample.  Paid parking is available on the street. ",
+                  "Authentic chinese food for good value Small place. Service is not that great but the food is really good. I have the spicy fish soup almost once a week now. It's soooo spicy. It's to die for. Don't go there for dishes like general tao or other no so chinese dishes.  Schechuan; northern style; a bit of cantonese.",
+                  "Authentic and delicious Chinese If you like real Chinese food then this is a great choice. They have a lot of dishes from different regions of China. They offer dishes ranging from totally mild to very spicy. Western eaters may like the \"beef wrap\" \"eggplant with garlic sauce\" and \"general tao chicken\". We also like the congee. The szechuan style fish hot pots are large, quite spicy and full of flavor.\n\nOverall very tasty, good sized portions and reasonable price."
+               ],
+               "name": "Ju Xiang Yuan",
+               "photo_url": "http://static.tacdn.com/cds/media/photo-l/06/21/12/aa/beef-wrap.jpg",
+               "ta_id": 4547404
+            },
+            "highlight": {
+               "reviews": [
+                  " are really good - especially the <em>chicken</em> hearts and the Twice <em>fried</em> pork is really delicious.",
+                  " rolls, General Tao's <em>Chicken</em> etc) and that is not what this place is about.\n\nThe BBQ's appetizers",
+                  "Awesome spicy Chinese food Loved the food here. We ordered the BBQ shrimps and <em>chicken</em> hearts for",
+                  " starters. The <em>chicken</em> hearts tasted great. For the mains we ordered Kung Po Guy Ding (mildly spiced",
+                  " <em>chicken</em> with bell peppers and peanuts), Spicy fish in hot pot and Salt & Pepper sea food (shrimps"
+               ]
+            }
+         },
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzc55tk0mKy8N6Rug",
+            "_score": 0.18287927,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.377476",
+                  "lon": "-75.75366"
+               },
+               "rating": 3.5,
+               "placetype": "restaurant",
+               "address": "1766 Carling Avenue, Ottawa, Ontario Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d3344240-Reviews-m11068-Kim_s_Restaurant-Ottawa_Ontario.html",
+               "price_level": null,
+               "reviews": [
+                  "Authentic! Love the traditional Chinese food here at Kim's.  It's a rare find in Ottawa.  We've been going back many times and the food stays consistently great.  If you're looking for traditional Chinese, you can't do worst in Ottawa!",
+                  "Delicious and Inexpensive First timer since it turned over from Mrs. Le's and our group of 7 thoroughly enjoyed our experience. I had 2 apps - the steamed dumplings and the pan fried dumplings. They are homemade and worth trying. For my main I had the Beef and Chicken Pho. The broth and meat were very tasty and fresh. Tried Saki for the first time. Very enjoyable. Service was very friendly and attentive. The owner checked on us often. Such a nice lady and a very hard working. If you like delicious and inexpensive food this place is a must try.",
+                  "Excellent food! Better than in China Town!We were  a group of 15, everybody liked the food here. We all wanted to come back with our families. Good service! Thank you mrs. Kim!",
+                  "Pretty good value for just average food We went to this restaurant last month and were pretty disappointed with the food and price.  If you are looking for Vietnamese /Chinese food, go to China Town instead.  The food here was a bit pricey compared to China Town and the flavours were not very interesting.  I could have made better. Make sure you check the bill.  Some of the prices have changed I guess but were not in the menu.",
+                  "Group Lunch at Kim's Last week a large group of 18 had lunch at Kim's. Unfortunately we each ordered a combination plate. This caused large problems because of the way orders are dealt with in the kitchen. Everyone received their dish at a different time with great lapses before everyone was served. A couple of ladies waited an hour to get their order. The owner of Kim's was very apologetic and advised us that we should have each ordered a different dish and shared. That way it would be one order and everything would have come to the table at the same time. Live and learn. Perhaps we should have been given this advice at the beginning.\n\nThe combination plate was accompanied by a bowl of hot and sour soup which was tasty but a tad too sweet. The combo plate itself had a very generous with a serving of white rice, an egg roll and General Tao chicken.\n\nThe green tea was replenished regularly.",
+                  "Great value We had a lovely dinner, well presented, here. Prices are very moderate - although VAT always makes things more expensive.",
+                  "It was great at first, but something went wrong... I went here shortly after it opened and really enjoyed the food. Your typical North American style Chinese food, but dishes like the General Tao's chicken were done really well.\n\nHowever, I went back in the past week and the food was bad to mediocre. A mushroom and bok choy dish turned out to have dried or old mushrooms: it was like chewing on a tire. The General Tao's chicken was inadequately fried and the sauce was bland: the complete opposite of what I loved the first time. The stir fried eggplant dish we ordered wads completely obliterated due to overcooking and was a complete mess, despite the sauce tasting reasonable. Other dishes did better, like the pepper stir fried beef, but even that was not special.\n\nMaybe it's just inconsistency, but if you really want Chinese, you can find much better in the city.",
+                  "Wow TERRIBLE!!!!!! I went to Kim's Restaurant today with my brother to get a combination plate $14.95 for General tao chicken and plain white rice. When i could of went to Hung Men and got 3 items with chicken fried rice for $12.45. This \"Kim Restaurant had to be the worst tasting food\" ive ever tried and they're very cheap and racist as they put 10 hot peppers in the plain rice and mostly veggies more then the gerneral tao chicken. I feel like the gave me there left overs and the SOUP is so disgusting i threw it out immediately. The price i paid for and for so little i get, this restaurant sucks sweaty nutts. (The only good thing is walking in) but when you get in you see mean old dirty people  with bad attitudes that don't put forks and knifes! WORST then TERRIBLE. YUK!!!!!!!!!!!!!!!",
+                  "yummy unique Chinese food Compare with other big restaurants in China town, this small but nice decorated restaurant has special Chinese dishes. All my family members as well as kids love the food very much."
+               ],
+               "name": "Kim's Restaurant",
+               "photo_url": "http://static.tacdn.com/cds/media/photo-l/02/e8/22/8c/lunch-special-beef-n.jpg",
+               "ta_id": 3344240
+            },
+            "highlight": {
+               "reviews": [
+                  " thoroughly enjoyed our experience. I had 2 apps - the steamed dumplings and the pan <em>fried</em> dumplings. They",
+                  " are homemade and worth trying. For my main I had the Beef and <em>Chicken</em> Pho. The broth and meat were",
+                  " a serving of white rice, an egg roll and General Tao <em>chicken</em>.\n\nThe green tea was replenished regularly.",
+                  " tire. The General Tao's <em>chicken</em> was inadequately <em>fried</em> and the sauce was bland: the complete",
+                  " <em>chicken</em> were done really well.\n\nHowever, I went back in the past week and the food was bad to"
+               ]
+            }
+         },
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzadXtk0mKy8N6Rp7",
+            "_score": 0.16424917,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.32388",
+                  "lon": "-75.77792"
+               },
+               "rating": 3,
+               "placetype": "restaurant",
+               "address": "285 Greenbank Road, Ottawa, Ontario K2H 8K9 Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d1074538-Reviews-m11068-New_Hong_Shing_Restaurant-Ottawa_Ontario.html",
+               "price_level": "$$",
+               "reviews": [
+                  "first time try was going to deli next door when noticed lunch specials on sign ....caught our attention \n\ndecided to try it \n\nwide choice of menu items....seems very authentic chinese dishes ...\neggrolls - disappointing ...did not like taste , \nchicken fried rice and guy ding ....decent ....but not great \n\nservice efficent, swift ,\n\nappealing feature was lunch special pricing ....\n\nwill likely try again, different dishes to sample \n\ngarlic spareribs very good \nsweet and sour chicken balls hard coating.,...and warm ...not hot \nwill not re-order",
+                  "Terrible service We ordered food for delivery and were told 45 minutes. It finally arrived 2 hours after our order was placed and I had already made my hungry kids other food by this point. Pathetic. You lost regular customers. ",
+                  "It used to be good, but now awful This used to be one of the best Chinese restaurants in Ottawa and so I returned with my wife and friends. On entering an absolutely empty restaurant at 6pm we said that we had reservations for  five people and asked for a large round table with a carousel.\nThe waitress said, very abruptly, those tables were reserved for larger parties and so we were stuck in a corner with a small table, which would have been okay except that we had many dishes and it was very difficult to move them around. With no other patrons we thought that service would be swift. But we were wrong. Eventually our order was taken and after about 30 minutes the food arrived. The soup was good but a little too salty, this was followed by a dish of Fried rice. Ten minutes later \ntwo other dishes arrived along with a bowl of rice. The quality of food supplied was okay although some of the dishes were extremely spicy.\nThe decor in this restaurant hasn't changed in a long time and it reminds one of eating in an aircraft hangar with bare piping and roofing.\nThe Service was basically poor and there are only two waiters, one of which is involved with take-out orders.\nBy the time we left the restaurant, there were a few other guests but all the tables with carousels were unoccupied.\nThere are many good Chinese restaurants in Ottawa and I regret to say that this one has reached the bottom.",
+                  "Affordable lunch specials This is a great spot to drop in and have an affordable lunch special. You get an egg roll, chicken fried rice and either 1 or 2 choices of extras from a list of the omst popular dishes. It is a quick and enjoyable lunch without the frills of an expensive dining experience. I would recommend this as a stop for an enjoyable, fast, great priced lunch.",
+                  "Used to be my favorite, not any more... I used to enjoy coming here.  The food was decent to good as well as the prices.  Lately we have become very disappointed with the poor service.  It depends on who is serving you.  Most recently we came into the restaurant to celebrate with group of 10.  We were the only ones in the restaurant yet we had to continually ask for items we needed and we not attended to.  We were served by the female owner.  Without fail, one of the orders was wrong...by the end of the meal my daughter said that we should not go there for a while.  We will look for another favorite restaurant.  This is a family run business.  I must say that the customer service could really improve with this server!",
+                  "Decent Bargain lunch The $5.25 lunch special is a good deal. For this price you get an egg roll, chicken fried rice and a choice of 8 main dishes, all of which sounded good. The choices are things such as lemon chicken, chicken chow mein, beef with vegetables, spare ribs and the usual Canadian Chinese food. The food arrived promptly and was quite tasty and hot. The service was friendly and pleasant so, while this not gourmet dining, it is worth the money for an inexpensive lunch. I would certainly go there again.",
+                  "Warm, friendly, welcoming atmosphere We had a wonderful meal of Peking Duck. The staff is very welcoming and friendly. The food was presented well. Wonderful flavours. Our group of 8 was well looked after by a caring staff. Highly recommended.",
+                  "Consistently fabulous food A group of us goes every Thursday night (as schedule permits) and it's consistently fabulous, authentic, food. Portions are generous but more important, ingredients are fresh and selection of dishes vast. Some of our favorites are the peanut chicken, fish fillets in soy sauce, garlic tips with chicken and green beans with spicy pork. Service is fast and the owners are a delight. In our opinion, it is the best Chinese food in the city. A colleague of mine who comes from the US and who travelled in Singapore told us the food is was even better than what he experienced in China. I can't recommend it highly enough!",
+                  "Not recommended for anyone To be honest,This resturant is disguisting there food is gross all they put in it is large amount of MSG & Oil to which all you taste after is Oil in your mouth.The environment in the resturant is like a old asian fish store, as you step in the resturant all you smell is fish everywhere . Its not my cup of tea and i wouldn't recommend anyone going there, as nobody really goes there and its dead all right. \nIf you want high-blood pressure go here !",
+                  "Prices up, quality down. We used to order take-out about once a month from the previous owners. One order from the new owners was enough to persuade us to look elsewhere. The new owners raised the prices significantly, and lowered the quality. A shrimp dish had four shrimp, lots of sauce and a few vegetables.\nDefinitely not what we were used to!\nThis rating is very generous.\nWill not be back.",
+                  "Authentic Chinese Fare Great food, reasonable prices and authentic atmosphere.  Friendly service here and always a pleasure to visit.....",
+                  "La Bouffe est excellant Restaurant modeste mais la , c’est rapproche beaucoup a la façon de cuisiné Sichuan  de la chine vraiment très bon."
+               ],
+               "name": "New Hong Shing Restaurant",
+               "photo_url": null,
+               "ta_id": 1074538
+            },
+            "highlight": {
+               "reviews": [
+                  " ...\neggrolls - disappointing ...did not like taste , \n<em>chicken</em> <em>fried</em> rice and guy ding ....decent ....but not",
+                  " try again, different dishes to sample \n\ngarlic spareribs very good \nsweet and sour <em>chicken</em> balls hard coating.,...and warm ...not hot \nwill not re-order",
+                  " good but a little too salty, this was followed by a dish of <em>Fried</em> rice. Ten minutes later \ntwo other",
+                  " get an egg roll, <em>chicken</em> <em>fried</em> rice and either 1 or 2 choices of extras from a list of the omst",
+                  ", <em>chicken</em> <em>fried</em> rice and a choice of 8 main dishes, all of which sounded good. The choices are things"
+               ]
+            }
+         },
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzbVrtk0mKy8N6Rrf",
+            "_score": 0.16254108,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.33103",
+                  "lon": "-75.693695"
+               },
+               "rating": 3.5,
+               "placetype": "restaurant",
+               "address": "3993 Riverside Dr, Ottawa, Ontario Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d2161488-Reviews-m11068-Bambu_Restaurant-Ottawa_Ontario.html",
+               "price_level": null,
+               "reviews": [
+                  "Best Asian food in Ottawa Upscale Asian food in a nice and modern ambiance. Good for all ages. I am a sashimi enthusiast and fish there has always been fresh and perfect.",
+                  "Not interested in patron satisfaction! The bathroom smelled musty and unclean. The appetizer was miso soup that had separated, smelled and tasted odd, and was incredibly unappetizing. First time having miso so maybe these are normal attributes of this type of soup, but no one at the table finished it and the server didn't ask about it even though she removed three full bowls of soup. Entree was served luke warm, not hot and fresh. The thai curry sauce was tasty and the vegetables crisp, but was hard to enjoy knowing it had sat and gotten cold. Server never once asked how our food/experience was.",
+                  "Family birthday Excellent food and service. Wednesdays, a glass of wine is 5 dollars.  Free refills for sodas. Nice pots of Jasmine or Green tea to complete the meal. Good value. We had the egg rolls and they have the burnt ends, best egg rolls in Ottawa here. Ordered different plates of mango salad, ribs, sushi rolls, chicken dishes, white and chicken fried rice. Chopsticks. My daughter said the nurses from the hospital go here quite a bit and love it for take-out and evening out",
+                  "Delicious Been here quite a few times and recently to pick up take out. Large, extensive menu, including sushi, pad ti, dim sum. Friendly service, food served hot and tasty. Excellent for moderate cost.",
+                  "What has happened to this excellent restaurant? Staff has changed. Service is poor. No draft beer. No clean washrooms. Food takes forever and then was incorrect. Has there been a change in ownership? This was a great place until recently.\nThey will lose customers very quickly if they continue at this level.\nWe have gone regularly since they opened but today was probably the last time. One bad day is  acceptable, 3 is a pattern.",
+                  "Decent place I liked the food except I find that the chicken had a lot of fat in it.. especially when you ask for a dish with chicken that is not sliced… I will know for the next time...",
+                  "Very Disappointed Went to Bambu for an early dinner on Sunday around five o'clock.  Ordered appetizers and panang and chicken curry dishes for main course.  Both main courses were very bland, particularily the panang.  Scant chicken pieces were tastless and rubbery and the peppers were actually raw as opposed to just crisp.  The waitress seemed surprised.  Although polite, she did nothing to rectify the situation.  She did offer up during our conversation that the panang that she thinks is terrific is prepared by another chef.  I did not eat my meal (panang), my husband ate most of his, mainly out of sheer starvation.  We both calmly and politely paid for our meals and left.  Since I was still hungry , I had to find dinner elsewhere.  Needless to say, I will not be returning since there are too many other good restaurant out there.. ",
+                  "Disappointed, quality way down We went for dinner at Bambu a few times around a year ago and enjoyed the food and service. Both appear to have declined considerably. Service was slow - I had to go and find someone to be able to pay our bill and the food was bland (chicken rubbery, thai basil dish had virtually no flavour). Not much different than eating at a fast-food thai place. Waiter appeared to be one of two servers working that night so not his fault, but sloppy overall and would not go back.",
+                  "Great food if you wonder where to eat in Nepean I was there on business and discovered this great restaurant by chance. the place is clean, very friendly and fast service. The menu offers good meals and really enjoyed the food.",
+                  "Good food, warm beer I always like eating here as the food is excellent. I enjoy a beer with my food... I just wish the beer was colder. They can get busy at lunch and I think they are under staffed because sometimes getting lunch and eating it in under an hour for lunch is difficult.",
+                  "Impressive Ate here for lunch Aug 11th with two friends. The menu is a combination of  Thai, Chinese and Japanese. The decor is modern and very stylish as well as very clean. I am more of a meat and potato eater as well as gluten free but settle on the coconut curry chicken with basmati rice. It was plated beautifully and thankfully not overpowered with curry. I enjoyed it very much and will definitely return.",
+                  "Dinner with the family This is always willing to please.  They will try and make the dish as  you like it if they can.  We always to there when we are in Ottawa.",
+                  "First visit  Just have to say how fantastic of a meal we had at this restaurant. We have traveled throughout Thailand and Hong Kong and the spring rolls we had were on point. Chicken Satay skewers were alright. My girlfriend who is a vegetarian got the Buddhas delight and it was on point. Everything was delicious. We tried the green tea cheese cake, we enjoyed the cheesecake but not to a point where we would order it again. All in all service was good and food was excellent. Thank you.  ",
+                  "Quality food at Reasonable Price Very well-situated restaurant with friendly staff and excellent food. It has a wonderful sushi bar that my friends cannot resist. Did you say seconds? They always do. I love the beef and flat noodles in black bean sauce with peppers and onions. The soup is a great starter as is the spring rolls. I like the corn, chicken and egg soup with a dash of red wine vinegar.",
+                  "Always fantastic This location s close to home and as a result it is a frequent destination for date night! Nice décor, great sushi and Basil beef dishes",
+                  "Nice Bussiness lunch Nice Won Ton Soup to start. Ordered Dim Sum Option 4 with a well presented plate of\nShrimp Shui Mai, Stuffed Tofu with Shrimp & Pork, Fried Shrimp Won Tons and sauce. Very good lunch, well and fast served by waiter,",
+                  "Big menu, affordable, but cutting corners. We had some cocktails, teriyaki beef, ginger chicken, fried rice, soups, house special rolls and spring rolls.\nAll food was good but not spectacular. The soups were a bit watery, seemed to be missing spices. The rice was more of heated up on a pan than fried. The beef was way too salty. Although both meats were fresh and soft.\nThe cocktails aren't the place's strong side. Giant chunks of ice, not mixed, shy on liqueur, dumped in thick water glasses.\n\nThe staff was very friendly, helpful with menu choices. We will come back for a quick dinner again.",
+                  "Excellent fresh Chinese food Picked up food for takeout. Find that this Chinese food is not as salty as other Chinese takeout places and don't need to drink gallons of water after. Food is fresh. Not as cheap as your corner Chinese place but food is much better.\nLove the fried rice and the noodles",
+                  "Discovered a new dish The restaurant serves Dim Sum and Sushi in addition to the standard Chinese fare so you can visit often without worrying about ordering the same food all the time. There is plenty of variety. There is lots of parking including sections for the handicapped next to the entrance. Bambu is located on Riverside at the intersection of Hunt Club road and in the same general area as the Loblaws owned T&T Chinese \"supermarket\". Other restaurants in the neighborhood include The Firkin & Flyer, Moxie's Grill and Pho Thu Do.\n\nAlthough we often order the same dishes if we are revisiting a restaurant, we also do try and sample something new. And so it was during our recent trip to \nThis new dish that we sampled was the Peppersalt Tofu and it was a hit with all three of us. We have since taken to frying tofu at home although it does not taste as good.\n\nWe also ordered the Veggie Hot N Sour Soup to share and it was more Sweet than Hot. The Sweet Potato Roll from the Sushi portion of the menu was delicious. The Szechuan Chicken and the Egg Plan Shrimp were both passable.\n\nService throughout was good even thought the restaurant which is quite large was getting crowded. \n\nOverall, we loved two of the dishes, the other two were OK. The appetizer and soup were good. With an order of steamed white rice, our bill came to $76 including tax but without tip.",
+                  "Great food at reasonable prices Combination plates as well as an all you can eat buffet including excellent sushi.  Service was adequate but it was worth the wait as the food was to die for."
+               ],
+               "name": "Bambu Restaurant",
+               "photo_url": "http://static.tacdn.com/cds/media/photo-l/08/4d/a6/43/bambu-restaurant.jpg",
+               "ta_id": 2161488
+            },
+            "highlight": {
+               "reviews": [
+                  " salad, ribs, sushi rolls, <em>chicken</em> dishes, white and <em>chicken</em> <em>fried</em> rice. Chopsticks. My daughter said the",
+                  "Decent place I liked the food except I find that the <em>chicken</em> had a lot of fat in it.. especially",
+                  " when you ask for a dish with <em>chicken</em> that is not sliced… I will know for the next time...",
+                  " appetizers and panang and <em>chicken</em> curry dishes for main course.  Both main courses were very bland",
+                  ", particularily the panang.  Scant <em>chicken</em> pieces were tastless and rubbery and the peppers were actually raw"
+               ]
+            }
+         },
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzeS0tk0mKy8N6RxY",
+            "_score": 0.15542206,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.357754",
+                  "lon": "-75.935555"
+               },
+               "rating": 2.5,
+               "placetype": "restaurant",
+               "address": "854 March Road, Ottawa, Ontario K2W 0A5 Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d4446368-Reviews-m11068-Lucky_Dragon-Ottawa_Ontario.html",
+               "price_level": null,
+               "reviews": [
+                  "Nicely decorated.......Food leaves a lot to be desired Sorry to say....and I was warned, but...the food at this restaurant was the worst I have ever had.  Absolutely terrible.  Wii definitely not go back.",
+                  "Lucky Us! One of the best restaurants for familiar Chinese cuisine, the Lucky Dragon serves it quickly and cheerfully.  Take out is always hot and ready.  Selection is great and in our case it is close to home too.\nReady at short notice for large orders - we ordered food for 14 and it was ready in no time.",
+                  "Clean, bright, newer - good lunch spot One of the newer restaurants around Kanata North.  When time allows, my colleagues and I will make a point of taking the walk (3+ km) for exercise and have lunch at the Lucky Dragon.\nService is quick and friendly, there seems to be a growing high tech crowd showing up for lunch.  They have all of their noodle dishes on sale at lunch for $10 and had a few specials around the $8.00 mark. I once chose the chicken curry vegetable for $7.95 - tasty, but I prefer to order the won ton soup - nice sized bowl with big wontons and tasty sliced BBQ pork, 2 egg rolls & share a pot of tea - taxes in lunch is under $10.00. ",
+                  "Good Takeout Food and Service I can't comment on our experience eating here, as we have only placed orders for takeout.  However, I can say that on the several occasions that we have placed takeout orders, the food has always been ready on time and piping hot, the order has always been 100% accurate, and we have always enjoyed our Combination #5 plates (egg roll, sweet & sour chicken balls, chicken chow mien, and chicken fried rice).  The food is good, the quantity is generous to the point where we usually have some leftovers for the next day, and at $10.95 per plate, we have always been completely satisfied.",
+                  "Average but Consistent Portions on the good stuff is small. The food seems fresh.  The servers are so non welcoming; so why are they open, if they are not happy to see Customers. ",
+                  "This place sucks. I am sorry, I can't sugar coat it.  Nothing good comes from this place.  The service is terrible and the food isn't much better.  Read my other reviews, I am quite honest and usually full of praise when warranted but there isn't one good thing I can say about this place.  Surprised it is still in business.  Only a matter of time,"
+               ],
+               "name": "Lucky Dragon",
+               "photo_url": null,
+               "ta_id": 4446368
+            },
+            "highlight": {
+               "reviews": [
+                  " specials around the $8.00 mark. I once chose the <em>chicken</em> curry vegetable for $7.95 - tasty, but I",
+                  ", <em>chicken</em> chow mien, and <em>chicken</em> <em>fried</em> rice).  The food is good, the quantity is generous to the point",
+                  "% accurate, and we have always enjoyed our Combination #5 plates (egg roll, sweet & sour <em>chicken</em> balls"
+               ]
+            }
+         },
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzd_vtk0mKy8N6Rws",
+            "_score": 0.15468073,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.43526",
+                  "lon": "-75.60892"
+               },
+               "rating": 4,
+               "placetype": "restaurant",
+               "address": "Ogilvie & Blair, Ottawa, Ontario Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d4133103-Reviews-m11068-Mongolian_Grill-Ottawa_Ontario.html",
+               "price_level": null,
+               "reviews": [
+                  "Stir Fried Yummyness Loved it here.  First time at this chain and loved the idea of building your own stir fry and having it cooked right in front of you.  Not really a family restaurant but kids did enjoy it. "
+               ],
+               "name": "Mongolian Grill",
+               "photo_url": null,
+               "ta_id": 4133103
+            },
+            "highlight": {
+               "reviews": [
+                  "Stir <em>Fried</em> Yummyness Loved it here.  First time at this chain and loved the idea of building your"
+               ]
+            }
+         },
+         {
+            "_index": "locationidx",
+            "_type": "location",
+            "_id": "AVFOzbhrtk0mKy8N6Rr2",
+            "_score": 0.15377927,
+            "_source": {
+               "coordinates": {
+                  "lat": "45.455082",
+                  "lon": "-75.50453"
+               },
+               "rating": 1,
+               "placetype": "restaurant",
+               "address": "2002 Mer Bleu Rd, Ottawa, Ontario Canada",
+               "web_url": "http://www.tripadvisor.com/Restaurant_Review-g155004-d2254194-Reviews-m11068-New_York_Gourmet_Grill-Ottawa_Ontario.html",
+               "price_level": null,
+               "reviews": [
+                  "So Terrible It Closed We ate here once and only once, it was horrible and we told ourselves that it would be around for long. This place is no longer there and hasn't been for probably more than a year.",
+                  "Terrible and a waste of time and money So this palce calls itself a \"gourmet grill\". Thought we'd go there for date night with my wife. Terrible idea. The menu is weird. \"appetizers' are poutine or onion rings. the onion rings were good, but gourmet? hardly. poutine is not an appetizer, too filling. \n\nthe Entree's are a weird collection, steak or slouvaki or salad. Every entree comes with a \"salad\" and fries. Seriously, french fries with souvlaki? \n\nSo i ordered the steak and my wife the souvlaki. the \"salad\" came. chopped romaine lettuce with vinigrette. my steak was the worst I have every had, over cooked and, i think, fried. the mandatory fries were McCain frozen french fries. no other side available, no rice or potato or anything, just frozen french fries.\n\nMy wife said here souvlaki (chicken) was gross and came with, you guessed it, frozen fries.\n\nThe reataurant does not have a liquor license.\n\nThe entire meeal was 25 minutes, hardly gourmet dining.\n\nit's sad, really. the place is beautiful and they obviously poured there soul into the place but the food sucks and the menu is terrible."
+               ],
+               "name": "New York Gourmet Grill",
+               "photo_url": null,
+               "ta_id": 2254194
+            },
+            "highlight": {
+               "reviews": [
+                  " had, over cooked and, i think, <em>fried</em>. the mandatory fries were McCain frozen french fries. no other",
+                  " (<em>chicken</em>) was gross and came with, you guessed it, frozen fries.\n\nThe reataurant does not have a"
+               ]
+            }
+         }
+      ]
+   }

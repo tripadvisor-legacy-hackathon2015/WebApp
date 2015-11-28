@@ -1,3 +1,17 @@
-<div id="map">
+
+<div id="after-search">
+
+	<img class="search-logo" src="/img/tripadvisor.png" alt="Trip Advisor" height="50" width="50">
+
+    <div class="search-bar-pushed" id="custom-search-input-after">
+        <div class="input-group">
+            <input id="search_box" type="text" class="form-control input-lg" onSubmit="search();" placeholder="Search.." />
+            <span class="input-group-btn">
+                <button class="btn btn-info" onclick="search()" type="button">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
 
 </div>
