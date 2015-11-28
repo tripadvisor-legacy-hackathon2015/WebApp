@@ -72,22 +72,26 @@ router.get('/search', function(req, res, next) {
 			res.writeHead(500, {'Content-Type': 'text/plain'});
 			res.end("Server Error: "+error);
 		} else {
-			var numObjects = body.hits.total;
 			var responseObjects = body.hits.hits;
-
-			console.log('Num Objects Returned: '+numObjects);
 			//console.log('Body: '+JSON.stringify(body));
-
-			responseObjects = parse(responseObjects);
 			res.writeHead(200, {'Content-Type': 'application/json'});
-			res.end(JSON.stringify(responseObjects));
+			res.end(JSON.stringify(parse(responseObjects)));
 		}
 	});
 });
 
 function parse(data) {
 	//Add prioritization for rating
-	return data;
+	var response = {
+		size: 0,
+		result: []
+	};
+	response.size = data.length;
+	console.log('Num Objects Returned: '+data.length);
+	for (var i = 0; i<data.length; i++) {
+		response.result.push(data[i]._source);
+	}
+	return response;
 }
 
 module.exports = router;
