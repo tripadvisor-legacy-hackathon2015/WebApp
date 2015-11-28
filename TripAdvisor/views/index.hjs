@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 
     </head>
  
@@ -22,7 +23,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <body>
+    <body onload="getGeoLocation()">
         <div class="container vertical-center">
         <div class="row">
             <div class="col-md-6 search-bar">
@@ -34,12 +35,14 @@
                	</div>
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
-                        <input type="text" class="form-control input-lg" placeholder="Search.." />
-                        <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="button">
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-lg" placeholder="Search.." id="search_box" onsubmit="search()" />
+                            </div>
+                            <button class="btn btn-info btn-lg" type="submit" onclick="search()">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
-                        </span>
+                        </form>
                     </div>
                 </div>
             </div>
