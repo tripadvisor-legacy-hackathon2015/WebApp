@@ -26,7 +26,7 @@ function setLocation(position) {
 function search() {
     var searchText = document.getElementById("search_box").value;
     var serverAddress= 'sample_search_doc.json';
-    alert("search");
+    // alert("search");
     $.getJSON(serverAddress, {
         search: searchText,
         latitude: latitude,
