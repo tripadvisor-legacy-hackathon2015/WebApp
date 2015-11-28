@@ -15,8 +15,17 @@ angularApp.controller('MainController', ['$scope', function($scope) {
     });
 
     function populateResults (event, data) {
-        $scope.restaurants = data.result;
-        $scope.$apply();
+			for (var i = 0; i<data.result.length; i++) {
+				data.result[i].address = data.result[i].address.substr(0,data.result[i].address.indexOf(","));
+				data.result[i].distance = distance(
+					latitude,
+					parseFloat(data.result[i].coordinates.lat),
+					longitude,
+					parseFloat(data.result[i].coordinates.lon)
+					);
+			}
+			$scope.restaurants = data.result;
+			$scope.$apply();
     }
 }]);
 
@@ -61,15 +70,12 @@ function setLocation(position) {
 function search() {
     var searchText = document.getElementById("search_box").value;
     var serverAddress= '/search';
-    // alert("search");
     $.getJSON(serverAddress, {
         searchText: searchText,
         lat: latitude,
         lon: longitude
     }, function (data) {
-            //alert(JSON.stringify(data));
-            alert("see results on console");
-            $(document).trigger("searchResponse",data);
+        $(document).trigger("searchResponse",data);
     });
 }
 
@@ -121,10 +127,54 @@ function placeMarker(geoLocation, label) {
 		position: location,
 		title: label
 	});
+
 	marker.setMap(map);
 	return marker;
 }
 
+Number.prototype.toRad = function() {
+   return this * Math.PI / 180;
+}
 
+function distance(lat1, lat2, lon1, lon2) {
+var R = 6371; // km
+//has a problem with the .toRad() method below.
+var x1 = lat2-lat1;
+var dLat = x1.toRad();
+var x2 = lon2-lon1;
+var dLon = x2.toRad();
+var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+var d = R * c;
+}
 
-
+// function tempSetMarkers(geoLocation, label) {
+//   // Adds markers to the map.
+// 
+//   // Marker sizes are expressed as a Size of X,Y where the origin of the image
+//   // (0,0) is located in the top left of the image.
+// 
+//   // Origins, anchor positions and coordinates of the marker increase in the X
+//   // direction to the right and in the Y direction down.
+//   var image = {
+//     url: 'images/TArating.png',
+//     // This marker is 20 pixels wide by 32 pixels high.
+//     size: new google.maps.Size(20, 32),
+//     // The origin for this image is (0, 0).
+//     origin: new google.maps.Point(0, 0),
+//     // The anchor for this image is the base of the flagpole at (0, 32).
+//     anchor: new google.maps.Point(0, 32)
+//   };
+// 
+//   for (var i = 0; i < response.size; i++) {
+//     if response[]
+//     var marker = new google.maps.Marker({
+//       position: geoLocation
+//       map: map,
+//       icon: image,
+//       title: label
+//     });
+//   }
+// }
