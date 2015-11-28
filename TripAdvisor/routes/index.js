@@ -84,23 +84,24 @@ router.get('/search', function(req, res, next) {
 
 
 function start_conception_expansion(req,res,next){
-	var searchText = req.query.searchText;
-	var latitude = req.query.lat;
-	var longitude = req.query.lon;
-	var maxDistance = "2km"; //TODO: Less hardcoded
-
+  // i should call concept expansion service
   console.log("start_conception_expansion reached")
-
-  // call concept expansion service
-  // TODO: ensure only one word or something...
+	var searchText = req.query.searchText;
   console.log("searchText is "+searchText)
+  //
+  // TODO: ensure only one word or something...
   var concept_expansion_url = "http://es-hack-1.dai.gl:8000/word2vec?q="+searchText; 
-  var concept_expansion_array;
-  http.get(concept_expansion_url, function(data){
-    console.log("httpget started")
-    concept_expansion_array=JSON.parse(data)
-    console.log(data)
-  });
+
+  var request = require("request")
+  request({
+    url: concept_expansion_url,
+    json: true,
+
+  },function (error, response, body){
+    if(!error && response.statusCode ==200)
+      get_concept_expansion_elastic_search(req,res,next,body)
+  }
+) 
 
 }
 
@@ -109,7 +110,7 @@ function get_concept_expansion_elastic_search(req, res, next,concept_expansion_a
 	var searchText = req.query.searchText;
 	var latitude = req.query.lat;
 	var longitude = req.query.lon;
-	var maxDistance = "2km"; //TODO: Less hardcoded
+	var maxDistance = "10km"; //TODO: Less hardcoded
 	var responseObjects;
 	console.log("Servicing Reqest: Text = "+searchText+" Lat = "+latitude+" Lon = "+longitude);
 
