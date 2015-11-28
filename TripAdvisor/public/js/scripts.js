@@ -3,6 +3,7 @@ var longitude;
 var map;
 var map_loaded;
 var markerArray;
+var infoWindowArray;
 
 var star_array = ['img/1star.png', 
                   'img/2star.png', 
@@ -51,6 +52,7 @@ $(document).ready(function () {
     $(document).on("searchResponse", populateList);
 	  getGeoLocation();
     markerArray = new Array();
+    infoWindowArray = new Array();
 });
 
 function getGeoLocation(){
@@ -89,8 +91,10 @@ function search() {
 function clearMap() {
 	for (var i=0; i<markerArray.length; i++) {
 		markerArray[i].setMap(null);
+        infoWindowArray[i].close();
 	}
 	markerArray = new Array();
+    infoWindowArray = new Array();
 }
 
 function populateMap(event, data) {
@@ -106,11 +110,14 @@ function populateMap(event, data) {
 			parseFloat(data.result[i].coordinates.lat),
 			parseFloat(data.result[i].coordinates.lon));
 		latlngbounds.extend(location);
+
 		var tempMarker = placeMarker(
       data.result[i].coordinates,
       data.result[i].name,
       data.result[i].address,
-      data.result[i].rating);
+      data.result[i].rating,
+      data.result[i].photo_url,
+      i);
 
 		markerArray.push(tempMarker);
 	}
@@ -130,7 +137,8 @@ function initMap() {
 	placeMarker(myLatLng, "You Are Here");
 }
 
-function placeMarker(geoLocation, label, address, rating) {
+function placeMarker(geoLocation, label, address, rating, photoUrl) {
+
 	var location = {
 		lat: parseFloat(geoLocation.lat),
 		lng: parseFloat(geoLocation.lon)
@@ -153,23 +161,31 @@ function placeMarker(geoLocation, label, address, rating) {
 		position: location,
 		title: label,
     icon: image,
-    // animation: google.maps.Animation.DROP
+    animation: google.maps.Animation.DROP
+
 	});
 
     // Show restaurant name and adddress on hover
     var contentString = '<div><h2>'+ label + '</h2></div>' +
-        '<div><p>' + address + '</p></div>';
+        '<div><p>' + address + '</p></div>' + 
+        '<div><img src="' + photoUrl + '">';
     var infoWindow = new google.maps.InfoWindow({
         content: contentString
     });
-    marker.addListener('mouseover', function () {
+    infoWindowArray.push(infoWindow);
+
+    marker.addListener('click', function () {
+        for (var i = 0; i < markerArray.length; i++) {
+            markerArray[i].setAnimation(null);
+            infoWindowArray[i].close();
+        };
         marker.setAnimation(google.maps.Animation.BOUNCE);
-        infoWindow.open(map, marker)
+        infoWindow.open(map, marker);
     });
-    marker.addListener('mouseout', function () {
-        marker.setAnimation(null);
-        infoWindow.close();
-    })
+    // marker.addListener('mouseout', function () {
+    //     marker.setAnimation(null);
+    //     infoWindow.close();
+    // })
 
 	marker.setMap(map);
 	return marker;

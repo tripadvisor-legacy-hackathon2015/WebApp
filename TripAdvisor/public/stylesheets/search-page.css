@@ -1,3 +1,8 @@
+body, html{
+    height: 100%;
+}
+
+
 #custom-search-input{
     padding: 3px;
     border: solid 1px #E4E4E4;
@@ -113,11 +118,12 @@
     height: 100%;
     min-width:200px;
     width: 100%;
+    border-left: 1px solid #ccc;
 }
 .img_holder{
-    background-color: #b3cccc;
-    height: 90px;
-    width: 90px;
+    background-color: #a6a6a6;
+    height: 120px;
+    width: 120px;
 }
 
 
@@ -131,44 +137,69 @@
     flex-direction: row;
 
 }
+#result-item.results_list:first-child{
+    margin-top: 10px;
+}
 .result_listing{
-    overflow:scroll;
+    margin-top: 10px;
+    overflow-y:scroll;
+    flex-grow: 1;
 }
 .name_holder{
-    background-color: #f29bac;
     height:26px;
     margin-left: 5px;
+    font-size: 120%;
 
+}
+
+a:link, a:hover, a:visited{
+    color:#000000;
+    text-decoration: none;
 }
 .address_holder{
-    background-color: #f243b2;
-    height:26px;
-    width: 40%;
-
+    height:21px;
+    width: 100%;
     margin-left: 5px;
+    padding-bottom: 15px;
 }
 .rating_holder{
-    background-color: #f2824c;
-    height:26px;
+    height:20px;
     width: 40%;
     margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 .distance_holder{
-    background-color: #f2d424;
     height:90px;
     line-height: 90px;
     margin-right: 20px;
-    padding-bottom: 20px;
+    margin-top: 15px;
+    vertical-align: middle;
 
 }
+
+.img{
+    width:120px;
+    height:120px;
+}
+
 .info_holder,
 .quote_holder{
     flex-grow: 1;
 }
 
 .quote_holder{
-    width:50px;
-    height: 50px;
+
+    height: 40px;
     vertical-align: middle;
+    margin-left: 5px;
+    font-size: 80%;
+    
+}
+
+.results_column{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    overflow-y:scroll;
 }
