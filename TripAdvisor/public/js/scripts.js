@@ -1,6 +1,7 @@
 var latitude;
 var longitude;
 var map;
+var markerArray;
 
 $(document).ready(function () {
     $("#search_box").keyup(function (e) {
@@ -10,6 +11,7 @@ $(document).ready(function () {
     });
     $(document).on("searchResponse", populateMap);
     $(document).on("searchResponse", populateList);
+    markerArray = new Array();
 });
 
 function getGeoLocation(){
@@ -40,9 +42,21 @@ function search() {
     });
 }
 
+function clearMap() {
+	for (var i=0; i<markerArray.length; i++) {
+		markerArray[i].setMap(null);
+	}
+	markerArray = new Array();
+}
+
 function populateMap(event, data) {
 	console.log(event);
 	console.log(data);
+	clearMap();
+	for (var i = 0; i<data.size; i++) {
+		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name);
+		markerArray.push(tempMarker);
+	}
 }
 
 function populateList(event, data) {
@@ -57,15 +71,20 @@ function initMap() {
 		center: myLatLng,
 		zoom: 8
 	});
-	placeMarker(myLatLng,"You are here!");
+	//placeMarker(myLatLng,"You are here!");
 }
 
 function placeMarker(geoLocation, label) {
+	var location = {
+		lat: parseFloat(geoLocation.lat),
+		lng: parseFloat(geoLocation.lon)
+	}
 	var marker = new google.maps.Marker({
-		position: geoLocation,
+		position: location,
 		title: label
 	});
 	marker.setMap(map);
+	return marker;
 }
 
 
