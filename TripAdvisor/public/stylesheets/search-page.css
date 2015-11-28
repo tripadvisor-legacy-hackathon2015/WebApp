@@ -86,9 +86,9 @@
 #search_results {
     margin-left: 0;
     margin-right: 0;
+
 }
 .search-bar-pushed{
-    width:85%;
     margin-top: 10px;
     margin-left:60px;
 }
@@ -101,7 +101,7 @@
     margin:50px 0 0 -150px;
 }
 .search-logo{
-    margin-top: 11px;
+    margin-top: 3px;
     float:left;
 }
 .title-padding{
@@ -110,6 +110,7 @@
 }
 
 #map {
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    min-width:200px;
+    width: 100%;
 }
