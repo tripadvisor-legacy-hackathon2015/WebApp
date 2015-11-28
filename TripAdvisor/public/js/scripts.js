@@ -5,6 +5,13 @@ var map_loaded;
 var markerArray;
 var infoWindowArray;
 
+var star_array = ['img/1star.png', 
+                  'img/2star.png', 
+                  'img/3star.png', 
+                  'img/4star.png', 
+                  'img/5star.png'];
+
+
 var angularApp = angular.module('angularApp', [], function ($interpolateProvider) {
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
@@ -103,7 +110,15 @@ function populateMap(event, data) {
 			parseFloat(data.result[i].coordinates.lat),
 			parseFloat(data.result[i].coordinates.lon));
 		latlngbounds.extend(location);
-		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name, data.result[i].address, data.result[i].photo_url, i);
+
+		var tempMarker = placeMarker(
+      data.result[i].coordinates,
+      data.result[i].name,
+      data.result[i].address,
+      data.result[i].rating,
+      data.result[i].photo_url,
+      i);
+
 		markerArray.push(tempMarker);
 	}
 	map.fitBounds(latlngbounds);
@@ -122,14 +137,17 @@ function initMap() {
 	placeMarker(myLatLng, "You Are Here");
 }
 
-function placeMarker(geoLocation, label, address, photoUrl) {
+function placeMarker(geoLocation, label, address, rating, photoUrl) {
+
 	var location = {
 		lat: parseFloat(geoLocation.lat),
 		lng: parseFloat(geoLocation.lon)
 	};
 
+  var rating = Math.ceil(rating);
+
   var image = {
-    url: 'img/smallstar.png',
+    url: star_array[rating - 1],
     // This marker is 20 pixels wide by 32 pixels high.
     size: new google.maps.Size(24, 24),
     // The origin for this image is (0, 0).
@@ -142,8 +160,9 @@ function placeMarker(geoLocation, label, address, photoUrl) {
 	var marker = new google.maps.Marker({
 		position: location,
 		title: label,
-        icon: image,
-        animation: google.maps.Animation.DROP
+    icon: image,
+    animation: google.maps.Animation.DROP
+
 	});
 
     // Show restaurant name and adddress on hover
