@@ -16,16 +16,17 @@ router.get('/search', function(req, res, next) {
 	var searchText = req.query.searchText; //assigned to sushi
 	var latitude = req.query.lat;
 	var longitude = req.query.lon;
-	console.log("Text: "+searchText+" Lat: "+latitude+" Lon: "+longitude);
+	var responseObjects, numObjects;
+	console.log("Servicing Reqest: Text = "+searchText+" Lat = "+latitude+" Lon = "+longitude);
 
-	client.search({
-		index: 'INDEX', //TODO: THIS
-  		type: 'TYPE', //TODO: THIS
+	client.search({ //TODO prioritize by rating, add index and type, do something with trip_types and price_level
+		index: 'INDEX',
+  		type: 'TYPE',
 		body: {
 			filtered : {
 				multi_match : {
 					query: searchText,
-					fields: [ "name^3", "reviews" ] //TODO prioritize by ranking
+					fields: [ "name^3", "reviews" ]
   				},
 				filter : {
 					geo_distance : {
@@ -39,24 +40,20 @@ router.get('/search', function(req, res, next) {
 				}
 			}
 	}).then(function (body) {
-		var hits = body.hits.hits;
+		numObjects = body.hits.total;
+		responseObjects = body.hits.hits;
+		responseObjects = parse(responseObjects);
+		res.writeHead(200, {'Content-Type': 'application/json'});
+		res.end(JSON.stringify(responseObjects));
 	}, function (error) {
 		console.trace(error.message);
-	});
-
-	client.ping({
-		// ping usually has a 3000ms timeout 
-		requestTimeout: Infinity,
-
-		// undocumented params are appended to the query string 
-		hello: "elasticsearch!"
-	}, function (error) {
-  		if (error) {
-			console.trace('elasticsearch cluster is down!');
-		} else {
-			console.log('All is well');
-		}
+		res.writeHead(500, {'Content-Type': 'text/plain'});
+		res.end("Server Error: "+error.message);
 	});
 });
+
+function parse(var data) {
+	return { message: "In Development" };
+}
 
 module.exports = router;
