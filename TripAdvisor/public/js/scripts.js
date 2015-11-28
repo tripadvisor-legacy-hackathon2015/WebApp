@@ -73,7 +73,37 @@ function placeMarker(geoLocation, label) {
 		position: geoLocation,
 		title: label
 	});
+
 	marker.setMap(map);
 }
 
+
+function setMarkers(geoLocation, label) {
+  // Adds markers to the map.
+
+  // Marker sizes are expressed as a Size of X,Y where the origin of the image
+  // (0,0) is located in the top left of the image.
+
+  // Origins, anchor positions and coordinates of the marker increase in the X
+  // direction to the right and in the Y direction down.
+  var image = {
+    url: 'images/TArating.png',
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(20, 32),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(0, 32)
+  };
+
+  for (var i = 0; i < response.size; i++) {
+    if response[]
+    var marker = new google.maps.Marker({
+      position: geoLocation
+      map: map,
+      icon: image,
+      title: label
+    });
+  }
+}
 
