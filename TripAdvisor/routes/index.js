@@ -99,6 +99,15 @@ function start_conception_expansion(req,res,next){
   http.get(concept_expansion_url, function(data){
     concept_expansion_array=data
     console.log(data)
+=======
+
+  // call concept expansion service
+  // TODO: ensure only one word or something...
+  var concept_expansion_url = "http://es-hack-1.dai.gl:8000/word2vec?q="+searchText; 
+  var concept_expansion_array;
+  $.getJSON(concept_expansion_url, function(data){
+    concept_expansion_array=data
+>>>>>>> concept-expansion beginngs
   });
 
 }
@@ -117,7 +126,7 @@ function get_concept_expansion_elastic_search(req, res, next,concept_expansion_a
 			"filtered": {
 				"query": {
 					"multi_match": {
-						"query": concept_expansion_array.slice(0,3),
+						"query": searchText,
 						"type": "most_fields", 
 						"fields": ["name^3", "reviews"]
 					}
