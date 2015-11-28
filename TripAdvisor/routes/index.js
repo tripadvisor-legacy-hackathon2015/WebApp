@@ -52,7 +52,7 @@ router.get('/search', function(req, res, next) {
 	});
 });
 
-function parse(var data) {
+function parse(data) {
 	return { message: "In Development" };
 }
 
