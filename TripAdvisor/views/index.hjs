@@ -33,7 +33,12 @@
                 </div>
             </div>
         </div>
+        {{> main_search }}
+
         <div class="container" id="search_results">
+            <div class="container" id="sort_bar">
+            {{> after_search }} 
+            </div>
             <div class="container" id="sort_bar">
 
             </div>
@@ -42,7 +47,7 @@
             </div>
             {{> mapView }}
         </div>
-    </div>
+
     {{> scripts }}
   </body>
 </html>
