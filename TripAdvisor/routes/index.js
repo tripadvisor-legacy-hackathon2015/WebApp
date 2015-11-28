@@ -1,14 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var elasticsearch = require('elasticsearch');
-var client = new elasticsearch.Client({
-	host: '159.203.23.61:9200',
-	log: 'trace'
-});
+var config = require('../config.js');
 
+/*var client = new elasticsearch.Client({
+	host: config.__elasticsearch.host,
+	log: 'trace'
+});*/
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', {
+    title: config.appName,
+    partials: {
+      head:     'partials/head',
+      mapView:  'partials/map-view',
+      footer:   'partials/footer',
+      scripts:  'partials/scripts'
+    }
+  });
 });
 
 router.get('/search', function(req, res, next) {
