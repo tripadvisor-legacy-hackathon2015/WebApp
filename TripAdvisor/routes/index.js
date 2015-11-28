@@ -24,8 +24,8 @@ router.get('/search', function(req, res, next) {
 	var searchText = req.query.searchText;
 	var latitude = req.query.lat;
 	var longitude = req.query.lon;
-	var maxDistance = "2km";
-	var responseObjects, numObjects;
+	var maxDistance = "2km"; //TODO: Less hardcoded
+	var responseObjects;
 	console.log("Servicing Reqest: Text = "+searchText+" Lat = "+latitude+" Lon = "+longitude);
 
 	var query = {
@@ -66,14 +66,13 @@ router.get('/search', function(req, res, next) {
 	};
 
 	request(query_request_options, function(error, response, body){
-		console.log('Error: '+error);
 		if (error != null) {
 			console.log(error);
 			res.writeHead(500, {'Content-Type': 'text/plain'});
 			res.end("Server Error: "+error);
 		} else {
-			var responseObjects = body.hits.hits;
 			//console.log('Body: '+JSON.stringify(body));
+			var responseObjects = body.hits.hits;
 			res.writeHead(200, {'Content-Type': 'application/json'});
 			res.end(JSON.stringify(parse(responseObjects)));
 		}
@@ -87,7 +86,7 @@ function parse(data) {
 		result: []
 	};
 	response.size = data.length;
-	console.log('Num Objects Returned: '+data.length);
+	//console.log('Num Objects Returned: '+data.length);
 	for (var i = 0; i<data.length; i++) {
 		response.result.push(data[i]._source);
 	}
