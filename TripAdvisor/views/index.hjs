@@ -25,7 +25,6 @@
                         <ul>
                             <li><% restaurant.name %></li>
                         </ul>
-
                     </div>
                 </div>
                 <div class="col-md-6">

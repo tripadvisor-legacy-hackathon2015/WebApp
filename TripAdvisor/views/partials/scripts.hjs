@@ -5,4 +5,4 @@
 <script src="js/scripts.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCc7js6UuN38ntnmyoUeImROOF-FcQT3w&callback=initMap"></script>
-<script src="modules/app.js"></script>
+<!-- <script src="modules/app.js"></script> -->
