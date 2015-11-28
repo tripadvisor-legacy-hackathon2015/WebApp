@@ -121,13 +121,19 @@ function get_concept_expansion_elastic_search(req, res, next,concept_expansion_a
 	var maxDistance = "10km"; //TODO: Less hardcoded
 	var responseObjects;
 	console.log("Servicing Reqest: Text = "+searchText+" Lat = "+latitude+" Lon = "+longitude);
+  concept_expansion_array=array.slice();
+
+  array.forEach(function(word){
+    if(word.indexOf(searchText)>-1)
+     concept_expansion_array.splice(concept_expansion_array.indexOf(word),1);
+  })
 
 	var query = {
 		"query" : {
 			"filtered": {
 				"query": {
 					"multi_match": {
-						"query": concept_expansion_array.slice(0,3),
+						"query": concept_expansion_array,
 						"type": "most_fields", 
 						"fields": ["name^3", "reviews"]
 					}
