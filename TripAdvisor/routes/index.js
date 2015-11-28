@@ -97,7 +97,8 @@ function start_conception_expansion(req,res,next){
   var concept_expansion_url = "http://es-hack-1.dai.gl:8000/word2vec?q="+searchText; 
   var concept_expansion_array;
   http.get(concept_expansion_url, function(data){
-    concept_expansion_array=data
+    console.log("httpget started")
+    concept_expansion_array=JSON.parse(data)
     console.log(data)
   });
 
