@@ -15,8 +15,17 @@ angularApp.controller('MainController', ['$scope', function($scope) {
     });
 
     function populateResults (event, data) {
-        $scope.restaurants = data.result;
-        $scope.$apply();
+			for (var i = 0; i<data.result.length; i++) {
+				data.result[i].address = data.result[i].address.substr(0,data.result[i].address.indexOf(","));
+				data.result[i].distance = distance(
+					latitude,
+					parseFloat(data.result[i].coordinates.lat),
+					longitude,
+					parseFloat(data.result[i].coordinates.lon)
+					);
+			}
+			$scope.restaurants = data.result;
+			$scope.$apply();
     }
 }]);
 
@@ -121,6 +130,24 @@ function placeMarker(geoLocation, label) {
 
 	marker.setMap(map);
 	return marker;
+}
+
+Number.prototype.toRad = function() {
+   return this * Math.PI / 180;
+}
+
+function distance(lat1, lat2, lon1, lon2) {
+var R = 6371; // km
+//has a problem with the .toRad() method below.
+var x1 = lat2-lat1;
+var dLat = x1.toRad();
+var x2 = lon2-lon1;
+var dLon = x2.toRad();
+var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+var d = R * c;
 }
 
 // function tempSetMarkers(geoLocation, label) {
