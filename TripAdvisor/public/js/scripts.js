@@ -26,17 +26,17 @@ function search() {
         longitude: longitude
     }, function (data) {
         console.log(data);
-        data = {name:"Test", pizza:"bacon", results:25}
+        data = { name: "Test", pizza: "bacon", results: 25 }
         if (data.results && data.results.length > 0) {
             //var mySenators = '<p>build:</p>';
             alert(data.pizza);
 
-            $.each(data.resuts, function(i, rep) {
+            $.each(data.resuts, function (i, rep) {
                 if ('pizza' == rep.chamber.toLowerCase()) {
                 }
             });
         }
-    }
+    });
  }
 function initMap() {
 	var myLatLng = {lat: 45.3875812, lng: -75.6982142};
