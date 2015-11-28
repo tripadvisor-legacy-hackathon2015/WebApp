@@ -117,6 +117,7 @@ function placeMarker(geoLocation, label) {
 		lat: parseFloat(geoLocation.lat),
 		lng: parseFloat(geoLocation.lon)
 	}
+  
 	var marker = new google.maps.Marker({
 		position: location,
 		title: label
