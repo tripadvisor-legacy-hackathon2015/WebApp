@@ -24,7 +24,7 @@ router.get('/search', function(req, res, next) {
 	var searchText = req.query.searchText;
 	var latitude = req.query.lat;
 	var longitude = req.query.lon;
-	var maxDistance = "2km"; //TODO: Less hardcoded
+	var maxDistance = "10km"; //TODO: Less hardcoded
 	var responseObjects;
 	console.log("Servicing Reqest: Text = "+searchText+" Lat = "+latitude+" Lon = "+longitude);
 
@@ -35,7 +35,8 @@ router.get('/search', function(req, res, next) {
 					"multi_match": {
 						"query": searchText,
 						"type": "most_fields", 
-						"fields": ["name^3", "reviews"]
+						"fields": ["name^3", "reviews"],
+                        "minimum_should_match": "100%"
 					}
 				},
 				"filter": {

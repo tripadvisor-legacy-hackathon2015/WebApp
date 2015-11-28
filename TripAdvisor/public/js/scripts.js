@@ -61,15 +61,12 @@ function setLocation(position) {
 function search() {
     var searchText = document.getElementById("search_box").value;
     var serverAddress= '/search';
-    // alert("search");
     $.getJSON(serverAddress, {
         searchText: searchText,
         lat: latitude,
         lon: longitude
     }, function (data) {
-            //alert(JSON.stringify(data));
-            alert("see results on console");
-            $(document).trigger("searchResponse",data);
+        $(document).trigger("searchResponse",data);
     });
 }
 
@@ -126,7 +123,6 @@ function placeMarker(geoLocation, label) {
 	return marker;
 }
 
-
 function tempSetMarkers(geoLocation, label) {
   // Adds markers to the map.
 
@@ -155,4 +151,3 @@ function tempSetMarkers(geoLocation, label) {
     });
   }
 }
-
