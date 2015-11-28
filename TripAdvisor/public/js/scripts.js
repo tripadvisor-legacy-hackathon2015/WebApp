@@ -2,6 +2,10 @@ var latitude;
 var longitude;
 var map;
 
+$(document).ready(function () {
+    
+});
+
 function getGeoLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(setLocation);
