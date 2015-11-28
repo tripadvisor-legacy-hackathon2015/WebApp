@@ -9,15 +9,11 @@
     <![endif]-->
     {{> head }}
     
-    <body onload="getGeoLocation()">
+    <body onload="getGeoLocation()" ng-app="angularApp">
 
-        <!--{{> main_search }}-->
+        <!-- {{> main_search }} -->
 
-
-
-
-
-        <div class="container-fluid" id="search_results">
+        <div class="container-fluid" id="search_results" ng-controller="MainController">
             <div class="row">
                 <div class="col-md-6">
                     <div id="after_search">
@@ -25,8 +21,10 @@
                     {{> after_search}}
 
                     </div>
-                    <div id="results_list">
-
+                    <div id="results_list" ng-repeat="restaurant in restaurants">
+                        <ul>
+                            <li><% restaurant.name %></li>
+                        </ul>
 
                     </div>
                 </div>
