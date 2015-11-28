@@ -94,9 +94,6 @@ function parse(data) {
         var result_highlights = [];
         if (data[i].highlight) {
             var highlights = data[i].highlight;
-            if (highlights.name) {
-                result_highlights = result_highlights.concat(highlights.name);
-            }
             if (highlights.reviews) {
                 result_highlights = result_highlights.concat(highlights.reviews);
             }
