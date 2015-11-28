@@ -4,7 +4,7 @@
               <div class="title-padding">
                 <h2>
                   <img src="/img/tripadvisor.png" alt="Trip Advisor" height="44" width="44">
-                  Tripadvisor
+                  TripAdvisor
                 </h2>
                 </div>
                 <div class="search-bar" id="custom-search-input-after">

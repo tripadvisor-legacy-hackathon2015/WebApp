@@ -11,25 +11,33 @@
     
     <body onload="getGeoLocation()">
 
-        {{> main_search }}
-
-
-
-
-
         <!--{{> main_search }}-->
 
-        <div class="container" id="search_results">
-            <div id="sort_bar">
 
-            {{> after_search}}
 
+
+
+        <div class="container-fluid" id="search_results">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="after_search">
+
+                    {{> after_search}}
+
+                    </div>
+                    <div id="results_list">
+
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="map_view">
+
+                        {{> mapView }}
+
+                    </div>
+                </div>
             </div>
-            <div id="results_list">
-
-
-            </div>
-            {{> mapView }}
         </div>
 
     {{> scripts }}
