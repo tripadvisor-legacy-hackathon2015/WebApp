@@ -78,7 +78,7 @@ function placeMarker(geoLocation, label) {
 }
 
 
-function setMarkers(geoLocation, label) {
+function tempSetMarkers(geoLocation, label) {
   // Adds markers to the map.
 
   // Marker sizes are expressed as a Size of X,Y where the origin of the image
