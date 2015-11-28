@@ -8,14 +8,33 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     {{> head }}
+    
     <body onload="getGeoLocation()">
-
-
-
-
+        <div class="container vertical-center">
+        <div class="row">
+            <div class="col-md-6 search-bar">
+            	<div class="title-padding">
+                <h2>
+                	<img src="/img/tripadvisor.png" alt="Trip Advisor" height="44" width="44">
+                	Tripadvisor
+                </h2>
+               	</div>
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <form class="form-inline" role="form" id="search_form">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-lg" placeholder="Search.." id="search_box" onsubmit="search()"/>
+                            </div>
+                            <button class="btn btn-info btn-lg" type="submit" onclick="search()">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         {{> main_search }}
 
-        
         <div class="container" id="search_results">
             <div class="container" id="sort_bar">
             {{> after_search }} 
