@@ -13,6 +13,8 @@ router.get('/', function(req, res, next) {
     title: config.appName,
     partials: {
       head:     'partials/head',
+      main_search: 'partials/main-search',
+      after_search: 'partials/after-search',
       mapView:  'partials/map-view',
       footer:   'partials/footer',
       scripts:  'partials/scripts'
