@@ -99,7 +99,7 @@ function populateMap(event, data) {
 			parseFloat(data.result[i].coordinates.lat),
 			parseFloat(data.result[i].coordinates.lon));
 		latlngbounds.extend(location);
-		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name);
+		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name, data.result[i].address);
 		markerArray.push(tempMarker);
 	}
 	map.fitBounds(latlngbounds);
@@ -118,15 +118,44 @@ function initMap() {
 	placeMarker(myLatLng, "You Are Here");
 }
 
-function placeMarker(geoLocation, label) {
+function placeMarker(geoLocation, label, address) {
 	var location = {
 		lat: parseFloat(geoLocation.lat),
 		lng: parseFloat(geoLocation.lon)
-	}
+	};
+
+  var image = {
+    url: 'img/smallstar.png',
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(24, 24),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(12, 12)
+  };
+  console.log("PlaceMarker...", image);
+  
 	var marker = new google.maps.Marker({
 		position: location,
-		title: label
+		title: label,
+    icon: image,
+    animation: google.maps.Animation.DROP
 	});
+
+    // Show restaurant name and adddress on hover
+    var contentString = '<div><h2>'+ label + '</h2></div>' +
+        '<div><p>' + address + '</p></div>';
+    var infoWindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+    marker.addListener('mouseover', function () {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        infoWindow.open(map, marker)
+    });
+    marker.addListener('mouseout', function () {
+        marker.setAnimation(null);
+        infoWindow.close();
+    })
 
 	marker.setMap(map);
 	return marker;
@@ -150,32 +179,3 @@ function distance(lat1, lat2, lon1, lon2) {
 	var d = Math.round(10 * R * c) / 10;
 	return d;
 }
-
-// function tempSetMarkers(geoLocation, label) {
-//   // Adds markers to the map.
-// 
-//   // Marker sizes are expressed as a Size of X,Y where the origin of the image
-//   // (0,0) is located in the top left of the image.
-// 
-//   // Origins, anchor positions and coordinates of the marker increase in the X
-//   // direction to the right and in the Y direction down.
-//   var image = {
-//     url: 'images/TArating.png',
-//     // This marker is 20 pixels wide by 32 pixels high.
-//     size: new google.maps.Size(20, 32),
-//     // The origin for this image is (0, 0).
-//     origin: new google.maps.Point(0, 0),
-//     // The anchor for this image is the base of the flagpole at (0, 32).
-//     anchor: new google.maps.Point(0, 32)
-//   };
-// 
-//   for (var i = 0; i < response.size; i++) {
-//     if response[]
-//     var marker = new google.maps.Marker({
-//       position: geoLocation
-//       map: map,
-//       icon: image,
-//       title: label
-//     });
-//   }
-// }
