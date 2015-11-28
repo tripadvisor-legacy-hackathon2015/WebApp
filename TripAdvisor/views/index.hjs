@@ -21,12 +21,10 @@
                     {{> after_search}}
 
                     </div>
-
-                    <div id="results_list" class="result_listing">
-
-                            {{> result_item}}
-
-
+                    <div id="results_list" ng-repeat="restaurant in restaurants">
+                        <ul>
+                            <li><% restaurant.name %></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-6">

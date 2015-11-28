@@ -27,5 +27,5 @@ app.controller('MainController', ['$scope', function($scope) {
 				lon: 72
 			}
 		}
-	]
+	];
 }]);

@@ -4,12 +4,33 @@ var map;
 var map_loaded;
 var markerArray;
 
+var angularApp = angular.module('angularApp', [], function ($interpolateProvider) {
+    $interpolateProvider.startSymbol('<%');
+    $interpolateProvider.endSymbol('%>');
+});
+
+angularApp.controller('MainController', ['$scope', function($scope) {
+    angular.element(document).ready(function () {
+        $(document).on('searchResponse', populateResults);
+    });
+
+    function populateResults (event, data) {
+        $scope.restaurants = data.result;
+        $scope.$apply();
+    }
+}]);
+
 $(document).ready(function () {
     $("#search_box").keyup(function (e) {
         if (e.keyCode == 13) {
             search();
         }
     });
+
+    // var injector = angular.injector(['ng', 'angularApp']);
+    // var $controller = injector.get('$controller');
+    // var AngularCtrl = $controller('MainController');
+
     $(document).on("searchResponse", populateMap);
     $(document).on("searchResponse", populateList);
 	  getGeoLocation();
@@ -79,9 +100,7 @@ function populateMap(event, data) {
 }
 
 function populateList(event, data) {
-	//data:
-	//size: number of items
-	//result: array of items
+    
 }
 
 function initMap() {
