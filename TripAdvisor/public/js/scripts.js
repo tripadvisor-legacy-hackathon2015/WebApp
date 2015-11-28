@@ -47,3 +47,5 @@ function placeMarker(geoLocation, label) {
 	});
 	marker.setMap(map);
 }
+
+
