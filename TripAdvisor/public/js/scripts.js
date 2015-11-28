@@ -147,9 +147,10 @@ function placeMarker(geoLocation, label, address, photoUrl) {
 	});
 
     // Show restaurant name and adddress on hover
+    var pictureUrl = (photoUrl) ? '<img src="' + photoUrl + '">' : '';
     var contentString = '<div><h2>'+ label + '</h2></div>' +
         '<div><p>' + address + '</p></div>' + 
-        '<div><img src="' + photoUrl + '">';
+        '<div>' + pictureUrl;
     var infoWindow = new google.maps.InfoWindow({
         content: contentString
     });
