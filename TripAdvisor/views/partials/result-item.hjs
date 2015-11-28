@@ -1,7 +1,30 @@
-<div class="container" id="result-item">
-	
-    			
+<a href="google.com" id="result-item" class="results_list clearfix" ng-repeat="restaurant in restaurants">
 
-        	
+	<div class="img_holder">
+		<img id="restaurant_img" ng-src={{restaurant_img}} class=""/>
+	</div>
 
-</div>
+	<div class="info_holder">
+		<div class="name_holder">
+			<b><%restaurant.name%> </b>
+		</div>
+
+		<div class="address_holder">
+			<%restaurant.address%>
+		</div>
+
+		<div class="rating_holder">
+			<%restaurant.rating%>
+		</div>
+	</div>
+
+		<div class="quote_holder">
+		"best restaurant ever"
+	</div>
+
+	<div class="distance_holder"> 
+		1k
+	</div>
+
+
+</a>
