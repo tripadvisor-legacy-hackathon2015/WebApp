@@ -8,6 +8,7 @@ $(document).ready(function () {
             search();
         }
     });
+    $(document).on("searchResponse", populateMap);
 });
 
 function getGeoLocation(){
@@ -25,20 +26,24 @@ function setLocation(position) {
 
 function search() {
     var searchText = document.getElementById("search_box").value;
-    var serverAddress= 'sample_search_doc.json';
+    var serverAddress= '/search';
     // alert("search");
     $.getJSON(serverAddress, {
-        search: searchText,
-        latitude: latitude,
-        longitude: longitude
+        searchText: searchText,
+        lat: latitude,
+        lon: longitude
     }, function (data) {
             //alert(JSON.stringify(data));
             alert("see results on console");
-            $.each(data.results, function (key, value) {
-                console.log(""+key+": " + JSON.stringify(value));
-            });
+            $(document).trigger("searchResponse",data);
     });
- }
+}
+
+function populateMap(event, data) {
+	console.log(event);
+	console.log(data);
+}
+
 function initMap() {
 	var myLatLng = {lat: 45.3875812, lng: -75.6982142};
 	map = new google.maps.Map(document.getElementById('map'), {
