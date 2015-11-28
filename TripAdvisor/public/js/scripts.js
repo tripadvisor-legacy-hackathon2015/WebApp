@@ -33,9 +33,9 @@ function search() {
         longitude: longitude
     }, function (data) {
             //alert(JSON.stringify(data));
+            alert("see results on console");
             $.each(data.results, function (key, value) {
-                alert(key);
-                alert(value);
+                console.log(""+key+": " + JSON.stringify(value));
             });
     });
  }
