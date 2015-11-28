@@ -126,7 +126,7 @@ function get_concept_expansion_elastic_search(req, res, next,concept_expansion_a
 			"filtered": {
 				"query": {
 					"multi_match": {
-						"query": searchText,
+						"query": concept_expansion_array.slice(0,3),
 						"type": "most_fields", 
 						"fields": ["name^3", "reviews"]
 					}
