@@ -139,7 +139,7 @@ function placeMarker(geoLocation, label, address) {
 		position: location,
 		title: label,
     icon: image,
-    animation: google.maps.Animation.DROP
+    // animation: google.maps.Animation.DROP
 	});
 
     // Show restaurant name and adddress on hover
