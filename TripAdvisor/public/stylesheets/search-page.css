@@ -5,9 +5,15 @@
     background-color: #fff;
 }
 
+#custom-search-input form{
+    padding:5px 0 5px 5px;
+    margin:0;
+}
+
 #custom-search-input input{
     border: 0;
     box-shadow: none;
+    width:200px;
 }
 
 #custom-search-input button{
