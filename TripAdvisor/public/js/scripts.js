@@ -70,13 +70,20 @@ function setLocation(position) {
 function search() {
     var searchText = document.getElementById("search_box").value;
     var serverAddress= '/search';
-    $.getJSON(serverAddress, {
+    var opts ={
         searchText: searchText,
         lat: latitude,
         lon: longitude
-    }, function (data) {
+    }
+
+    $.getJSON(serverAddress,opts , function (data) {
         $(document).trigger("searchResponse",data);
     });
+    $.getJSON('/conceptexpansion',
+             opts,
+             function(data ){
+               console.log(JSON.stringify(data))
+             })
 }
 
 function clearMap() {

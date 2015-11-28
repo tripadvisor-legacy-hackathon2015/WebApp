@@ -19,6 +19,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
+
 router.get('/search', function(req, res, next) {
 	//Get searchText, get geolocation
 	var searchText = req.query.searchText;
@@ -28,7 +29,6 @@ router.get('/search', function(req, res, next) {
 	var responseObjects;
 	console.log("Servicing Reqest: Text = "+searchText+" Lat = "+latitude+" Lon = "+longitude);
 
-  start_conception_expansion(req,res,next)
 
 	var query = {
 		"query" : {
@@ -82,7 +82,7 @@ router.get('/search', function(req, res, next) {
 	});
 });
 
-
+router.get('/conceptexpansion',start_conception_expansion)
 function start_conception_expansion(req,res,next){
   // i should call concept expansion service
   console.log("start_conception_expansion reached")
