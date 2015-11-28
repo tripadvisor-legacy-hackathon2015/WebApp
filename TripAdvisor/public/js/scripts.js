@@ -3,7 +3,11 @@ var longitude;
 var map;
 
 $(document).ready(function () {
-    
+    $("#search_box").keyup(function (e) {
+        if (e.keyCode == 13) {
+            search();
+        }
+    });
 });
 
 function getGeoLocation(){
@@ -22,16 +26,16 @@ function setLocation(position) {
 function search() {
     var searchText = document.getElementById("search_box").value;
     var serverAddress= 'sample_search_doc.json';
-
+    alert("search");
     $.getJSON(serverAddress, {
         search: searchText,
         latitude: latitude,
         longitude: longitude
     }, function (data) {
             //alert(JSON.stringify(data));
-            $.each(data, function (i, rep) {
-                if (i == 1)
-                    alert(JSON.stringify(rep));
+            $.each(data.results, function (key, value) {
+                alert(key);
+                alert(value);
             });
     });
  }
