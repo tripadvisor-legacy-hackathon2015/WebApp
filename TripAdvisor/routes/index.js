@@ -52,6 +52,8 @@ router.get('/search', function(req, res, next) {
 			}
 		},
 		"highlight": {
+            "pre_tags": [""],
+            "post_tags": [""],
 			"fields": {
 				"reviews": {},
 				"name": {}

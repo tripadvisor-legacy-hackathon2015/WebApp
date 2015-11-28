@@ -15,16 +15,16 @@
 
         <div class="container-fluid" id="search_results" ng-controller="MainController">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 results_column">
                     <div id="after_search">
 
-                    {{> after_search}}
+                        {{> after_search}}
 
                     </div>
-                    <div id="results_list" ng-repeat="restaurant in restaurants">
-                        <ul>
-                            <li><% restaurant.name %></li>
-                        </ul>
+                    <div id="results_list">
+
+                        {{> result_item}}
+
                     </div>
                 </div>
                 <div class="col-md-6">
