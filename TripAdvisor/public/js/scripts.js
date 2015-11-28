@@ -9,6 +9,7 @@ $(document).ready(function () {
         }
     });
     $(document).on("searchResponse", populateMap);
+    $(document).on("searchResponse", populateList);
 });
 
 function getGeoLocation(){
@@ -42,6 +43,12 @@ function search() {
 function populateMap(event, data) {
 	console.log(event);
 	console.log(data);
+}
+
+function populateList(event, data) {
+	//data:
+	//size: number of items
+	//result: array of items
 }
 
 function initMap() {
