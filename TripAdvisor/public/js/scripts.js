@@ -20,8 +20,8 @@ var angularApp = angular.module('angularApp', [], function ($interpolateProvider
 angularApp.controller('MainController', ['$scope', function($scope) {
     angular.element(document).ready(function () {
         $(document).on('searchResponse', populateResults);
+        $(document).on('conceptexpansionResponse', populateConceptexpansionResults)
     });
-
     function populateResults (event, data) {
 			for (var i = 0; i<data.result.length; i++) {
 				data.result[i].address = data.result[i].address.substr(0,data.result[i].address.indexOf(","));
@@ -35,6 +35,21 @@ angularApp.controller('MainController', ['$scope', function($scope) {
 			$scope.restaurants = data.result;
 			$scope.$apply();
     }
+    function populateConceptexpansionResults(event, data){
+			for (var i = 0; i<data.result.length; i++) {
+				data.result[i].address = data.result[i].address.substr(0,data.result[i].address.indexOf(","));
+				data.result[i]['distance'] = distance(
+					latitude,
+					parseFloat(data.result[i].coordinates.lat),
+					longitude,
+					parseFloat(data.result[i].coordinates.lon)
+					);
+			}
+			$scope.conceptexpansionrestaurants = data.result;
+			$scope.$apply();
+    }
+    
+
 }]);
 
 $(document).ready(function () {
@@ -79,15 +94,23 @@ function setLocation(position) {
 function search() {
     var searchText = document.getElementById("search_box").value;
     var serverAddress= '/search';
-    $.getJSON(serverAddress, {
+    var opts ={
         searchText: searchText,
         lat: latitude,
         lon: longitude
-    }, function (data) {
+    }
+
+    $.getJSON(serverAddress,opts , function (data) {
         $(document).trigger("searchResponse",data);
     });
+    $.getJSON('/conceptexpansion',
+             opts,
+             function(data){
+$(document).trigger("conceptexpansionResponse",data)
+             })
 }
 
+function conceptexpansionResponse(){}
 function clearMap() {
 	for (var i=0; i<markerArray.length; i++) {
 		markerArray[i].setMap(null);
