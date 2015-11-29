@@ -58,6 +58,8 @@ $(document).ready(function () {
             search();
         }
     });
+           	$("#main_page").show();
+   	$("#search_results").hide();
 
     // var injector = angular.injector(['ng', 'angularApp']);
     // var $controller = injector.get('$controller');
@@ -92,6 +94,9 @@ function setLocation(position) {
 }
 
 function search() {
+	$("#main_page").hide();
+   	$("#search_results").show();
+
     var searchText = document.getElementById("search_box").value;
     var serverAddress= '/search';
     var opts ={
@@ -103,11 +108,15 @@ function search() {
     $.getJSON(serverAddress,opts , function (data) {
         $(document).trigger("searchResponse",data);
     });
+<<<<<<< Updated upstream
     $.getJSON('/conceptexpansion',
              opts,
              function(data){
 $(document).trigger("conceptexpansionResponse",data)
              })
+=======
+
+>>>>>>> Stashed changes
 }
 
 function conceptexpansionResponse(){}

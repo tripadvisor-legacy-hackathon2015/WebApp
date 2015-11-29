@@ -11,7 +11,7 @@
     
     <body ng-app="angularApp">
 
-        <!-- {{> main_search }} -->
+        <div id="main_page">{{> main_search }}</div>
 
         <div class="container-fluid" id="search_results" ng-controller="MainController">
             <div class="row">
