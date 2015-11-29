@@ -86,13 +86,8 @@ router.get('/conceptexpansion',start_conception_expansion)
 function start_conception_expansion(req,res,next){
   // i should call concept expansion service
   console.log("start_conception_expansion reached")
-<<<<<<< HEAD
-<<<<<<< HEAD
-
   // call concept expansion service
-=======
 	var searchText = req.query.searchText;
->>>>>>> working call to konstantin's service
   console.log("searchText is "+searchText)
   var concept_expansion_url = "http://es-hack-1.dai.gl:8000/word2vec?q="+searchText; 
   var concept_expansion_array;
@@ -100,15 +95,6 @@ function start_conception_expansion(req,res,next){
     console.log("httpget started")
     concept_expansion_array=JSON.parse(data)
     console.log(data)
-=======
-
-  // call concept expansion service
-  // TODO: ensure only one word or something...
-  var concept_expansion_url = "http://es-hack-1.dai.gl:8000/word2vec?q="+searchText; 
-  var concept_expansion_array;
-  $.getJSON(concept_expansion_url, function(data){
-    concept_expansion_array=data
->>>>>>> concept-expansion beginngs
   });
 
 }
