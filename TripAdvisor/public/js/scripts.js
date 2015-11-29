@@ -5,11 +5,11 @@ var map_loaded;
 var markerArray;
 var infoWindowArray;
 
-var star_array = ['img/1star.png', 
-                  'img/2star.png', 
-                  'img/3star.png', 
-                  'img/4star.png', 
-                  'img/5star.png'];
+var star_array = ['img/star1.png', 
+                  'img/star2.png', 
+                  'img/star3.png', 
+                  'img/star4.png', 
+                  'img/star5.png'];
 
 
 var angularApp = angular.module('angularApp', [], function ($interpolateProvider) {
