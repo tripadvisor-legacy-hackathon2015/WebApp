@@ -3,6 +3,14 @@ var longitude;
 var map;
 var map_loaded;
 var markerArray;
+var infoWindowArray;
+
+var star_array = ['img/1star.png', 
+                  'img/2star.png', 
+                  'img/3star.png', 
+                  'img/4star.png', 
+                  'img/5star.png'];
+
 
 var angularApp = angular.module('angularApp', [], function ($interpolateProvider) {
     $interpolateProvider.startSymbol('<%');
@@ -12,8 +20,8 @@ var angularApp = angular.module('angularApp', [], function ($interpolateProvider
 angularApp.controller('MainController', ['$scope', function($scope) {
     angular.element(document).ready(function () {
         $(document).on('searchResponse', populateResults);
+        $(document).on('conceptexpansionResponse', populateConceptexpansionResults)
     });
-
     function populateResults (event, data) {
 			for (var i = 0; i<data.result.length; i++) {
 				data.result[i].address = data.result[i].address.substr(0,data.result[i].address.indexOf(","));
@@ -27,6 +35,21 @@ angularApp.controller('MainController', ['$scope', function($scope) {
 			$scope.restaurants = data.result;
 			$scope.$apply();
     }
+    function populateConceptexpansionResults(event, data){
+			for (var i = 0; i<data.result.length; i++) {
+				data.result[i].address = data.result[i].address.substr(0,data.result[i].address.indexOf(","));
+				data.result[i]['distance'] = distance(
+					latitude,
+					parseFloat(data.result[i].coordinates.lat),
+					longitude,
+					parseFloat(data.result[i].coordinates.lon)
+					);
+			}
+			$scope.conceptexpansionrestaurants = data.result;
+			$scope.$apply();
+    }
+    
+
 }]);
 
 $(document).ready(function () {
@@ -44,6 +67,7 @@ $(document).ready(function () {
     $(document).on("searchResponse", populateList);
 	  getGeoLocation();
     markerArray = new Array();
+    infoWindowArray = new Array();
 });
 
 function getGeoLocation(){
@@ -70,20 +94,30 @@ function setLocation(position) {
 function search() {
     var searchText = document.getElementById("search_box").value;
     var serverAddress= '/search';
-    $.getJSON(serverAddress, {
+    var opts ={
         searchText: searchText,
         lat: latitude,
         lon: longitude
-    }, function (data) {
+    }
+
+    $.getJSON(serverAddress,opts , function (data) {
         $(document).trigger("searchResponse",data);
     });
+    $.getJSON('/conceptexpansion',
+             opts,
+             function(data){
+$(document).trigger("conceptexpansionResponse",data)
+             })
 }
 
+function conceptexpansionResponse(){}
 function clearMap() {
 	for (var i=0; i<markerArray.length; i++) {
 		markerArray[i].setMap(null);
+        infoWindowArray[i].close();
 	}
 	markerArray = new Array();
+    infoWindowArray = new Array();
 }
 
 function populateMap(event, data) {
@@ -99,7 +133,15 @@ function populateMap(event, data) {
 			parseFloat(data.result[i].coordinates.lat),
 			parseFloat(data.result[i].coordinates.lon));
 		latlngbounds.extend(location);
-		var tempMarker = placeMarker(data.result[i].coordinates,data.result[i].name, data.result[i].address);
+
+		var tempMarker = placeMarker(
+      data.result[i].coordinates,
+      data.result[i].name,
+      data.result[i].address,
+      data.result[i].rating,
+      data.result[i].photo_url,
+      i);
+
 		markerArray.push(tempMarker);
 	}
 	map.fitBounds(latlngbounds);
@@ -118,14 +160,17 @@ function initMap() {
 	placeMarker(myLatLng, "You Are Here");
 }
 
-function placeMarker(geoLocation, label, address) {
+function placeMarker(geoLocation, label, address, rating, photoUrl) {
+
 	var location = {
 		lat: parseFloat(geoLocation.lat),
 		lng: parseFloat(geoLocation.lon)
 	};
 
+  var rating = Math.ceil(rating);
+
   var image = {
-    url: 'img/smallstar.png',
+    url: star_array[rating - 1],
     // This marker is 20 pixels wide by 32 pixels high.
     size: new google.maps.Size(24, 24),
     // The origin for this image is (0, 0).
@@ -140,22 +185,31 @@ function placeMarker(geoLocation, label, address) {
 		title: label,
     icon: image,
     animation: google.maps.Animation.DROP
+
 	});
 
     // Show restaurant name and adddress on hover
+    var pictureUrl = (photoUrl) ? '<img src="' + photoUrl + '">' : '';
     var contentString = '<div><h2>'+ label + '</h2></div>' +
-        '<div><p>' + address + '</p></div>';
+        '<div><p>' + address + '</p></div>' + 
+        '<div>' + pictureUrl;
     var infoWindow = new google.maps.InfoWindow({
         content: contentString
     });
-    marker.addListener('mouseover', function () {
+    infoWindowArray.push(infoWindow);
+
+    marker.addListener('click', function () {
+        for (var i = 0; i < markerArray.length; i++) {
+            markerArray[i].setAnimation(null);
+            infoWindowArray[i].close();
+        };
         marker.setAnimation(google.maps.Animation.BOUNCE);
-        infoWindow.open(map, marker)
+        infoWindow.open(map, marker);
     });
-    marker.addListener('mouseout', function () {
-        marker.setAnimation(null);
-        infoWindow.close();
-    })
+    // marker.addListener('mouseout', function () {
+    //     marker.setAnimation(null);
+    //     infoWindow.close();
+    // })
 
 	marker.setMap(map);
 	return marker;
